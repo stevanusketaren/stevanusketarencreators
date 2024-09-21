@@ -86,18 +86,7 @@ li.dropdown {
       <a href="https://rida.humandigilib.xyz/index.php?p=daftar_online">Daftar Online</a>
       <a href="https://rida.humandigilib.xyz/index.php?p=member&sec=title_basket">Login</a>
     </div></li>
-    <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Tugas Web</a>
-    <div class="dropdown-content">
-      <a href="modul1.html">Modul 1</a>
-      <a href="modul2.html">Modul 2</a>
-      <a href="modul3.html">Modul 3</a>
-      <a href="modul4.html">Modul 4</a>
-      <a href="modul5.html">Modul 5</a>
-      <a href="modul6.html">Modul 6</a>
-      <a href="modul7.html">Modul 7</a>
-      <a href="modul8.html">Modul 8</a>
-    </div></li>
+  
 </ul>
 
 <p><center><u>Perpustakaan stevanus ketaren </center></p></u>
@@ -179,5 +168,80 @@ li.dropdown {
     </style>
 </head>
 
-						   
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pemesanan Buku</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, td, th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulir Pemesanan Buku</h2>
+    
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <th>Nama</th>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <th>Nomor Anggota Perpustakaan</th>
+                <td><input type="text" name="nomor_anggota" required></td>
+            </tr>
+            <tr>
+                <th>Tanggal Pemesanan</th>
+                <td><input type="date" name="tanggal_pemesanan" required></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>No Telepon</th>
+                <td><input type="text" name="no_telepon" required></td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>
+                    <input type="radio" name="jenis_kelamin" value="Laki-laki" required> Laki-laki
+                    <input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan
+                </td>
+            </tr>
+            <tr>
+                <th>Penulis Buku</th>
+                <td><input type="text" name="penulis_buku" required></td>
+            </tr>
+            <tr>
+                <th>No ISBN</th>
+                <td><input type="text" name="no_isbn" required></td>
+            </tr>
+            <tr>
+                <th>Judul Buku yang Dipesan</th>
+                <td><input type="text" name="judul_buku" required></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>						   
 </html>
