@@ -1,20 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contoh Gambar di HTML</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .image-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    img {
+      max-width: 100%; /* Responsive image */
+      height: auto;
+      border: 2px solid #333; /* Border around the image */
+    }
+    p {
+      color: #555;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
   <h1>Menampilkan Gambar di HTML</h1>
   <p>Berikut ini adalah gambar sawah:</p>
-  <p>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXpX9h50EbqCcBgBGYVOziupHKzdvET-HvcQ&s" />
-  </p>
+  <div class="image-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXpX9h50EbqCcBgBGYVOziupHKzdvET-HvcQ&s" alt="Gambar sawah" />
+  </div>
 </body>
-    <style>
-p {
-  background-image: url('img_girl.jpg');
-}
-</style>
 </html>
