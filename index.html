@@ -1,87 +1,15 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Contoh Tag Pasangan dan Tag Tunggal</title>
-</head>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-    <body>
-    <h1>Galeri Gambar Universitas</h1>
-    
-    <p>Berikut adalah gambar gedung Universitas Katolik Parahyangan:</p>
-    
-    <img src="https://unpar.ac.id/wp-content/uploads/2023/09/Foto-Gedung-11-Universitas-Katolik-Parahyangan.jpg" alt="Gedung Universitas Katolik Parahyangan" width="600" />
-    
-    <p>Gambar di atas menunjukkan keindahan gedung Universitas Katolik Parahyangan.</p>
-</body>
-<body>
-     
-    <p>Berikut adalah beberapa gambar bunga:</p>
-   
-    <img src="https://lh3.googleusercontent.com/p/AF1QipP3cCsLNN5Jg3C7h3ttFoE9rRQd9MPw5Qg2zpXd=s680-w680-h510" width="200" />
-    <img src="https://lh3.googleusercontent.com/p/AF1QipNUycXpmuQZPjzZsFdFU7tPuKA8LnK8th3Jrh9l=s680-w680-h510"  width="200" />
-    <img src="https://lh3.googleusercontent.com/p/AF1QipNUycXpmuQZPjzZsFdFU7tPuKA8LnK8th3Jrh9l=s680-w680-h510"  width="200" />
-    
-    <p>Setiap bunga memiliki keindahan tersendiri.</p>
-</body>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Belajar HTML5</title>
+  <meta charset="UTF-8">
+  <title>Contoh Audio di HTML</title>
 </head>
 <body>
-    <h1>Selamat Datang di Belajar HTML5!</h1>
-    <p>Ini adalah contoh konten dokumen HTML. Anda bisa menambahkan lebih banyak elemen di sini.</p>
-    <p>HTML5 memudahkan pembuatan website yang lebih interaktif dan responsif.</p>
+  <h1>Contoh Audio di Web</h1>
+  <audio controls>
+    <source src="ngoni.mp3" type="audio/mpeg">
+    Browsermu tidak mendukung tag audio, upgrade donk!
+  </audio>
 </body>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Contoh Video dan Audio</title>
-</head>
-<body>
-    <h1>Contoh Pemutar Video</h1>
-    <video width="320" height="240" controls>
-        <source src="movie.mp4" type="video/mp4">
-        <source src="movie.ogg" type="video/ogg">
-        Your browser does not support the video tag.
-    </video>
-
-    <h1>Contoh Pemutar Audio</h1>
-    <audio controls>
-        <source src="horse.ogg" type="audio/ogg">
-        <source src="horse.mp3" type="audio/mpeg">
-        Your browser does not support the audio tag.
-    </audio>
-</body>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Contoh Canvas</title>
-</head>
-<body>
-    <h1>Contoh Menggunakan Canvas</h1>
-    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
-    </canvas>
-    <script>
-        var c = document.getElementById("myCanvas");
-        var ctx = c.getContext("2d");
-        
-        // Buat gradien
-        var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
-        grd.addColorStop(0, "red");
-        grd.addColorStop(1, "white");
-
-        // Isi dengan gradien
-        ctx.fillStyle = grd;
-        ctx.fillRect(10, 10, 150, 80);
-    </script>
-</body>
-
-
-
-
 </html>
+
