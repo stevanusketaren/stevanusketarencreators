@@ -1,18 +1,233 @@
-<html lang="id">
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perpustakaan Universitas Unpar </title>
+    <!-- css link -->
+    <link rel="stylesheet"> <a href="style.css"></a></link>
+</head>
+
+<body>
+<style>
+    body {
+    background-image: url("https://wallpapercave.com/wp/wp4735271.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+
+<ul>
+  <li><a href="https://stevanusketaren.github.io/index.html">tugas buat Web </a></li>
+ 
+    
+</ul>
+
+<p><center><u>Perpustakaan stevanus ketaren </center></p></u>
+<p style="font-size: 25px"><h-2>Perkenalan</h2></p>
+<p style="font-size: 23px"><p style="margin-bottom: 50px">Perkenalkan, nama stevanus ketaren dengan NIM 222201023. Ini adalah perpustakaan
+<i>homepage</i>
+            <h-3>Berikut ini adalah gambar dari gedung Perpustakaan UNPAR.</h3>
+</p>
+<h-4><center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-hBxWYmhaxEVfIPeFCIcQ1zo6xXmUV5HuAg&s.jpg" style="box-shadow: 3px 3px 3px rgba(0,0,0,0.8)" alt=/></h4>
+</p>
+<p style="margin-bottom: 50px">
+    <font color="white"><h-5><i>Perpustakaan Unpar </i></h5></font>
+</p>
+</left>
+<p style="margin-bottom: 50px">
+<video controls width="50%">
+<source src="<iframe width="560" height="315" src=""https://www.youtube.com/embed/8PXxcX_g8SY?si=cujBHOibKxg4RPd0" type="video/mp4"></video></p>
+<p><h-6>Berikut adalah video Profil Perpustakaan UNPAR </h6></p>
+<p style="margin-bottom: 50px">
+<audio controls>
+<source src="image/[GudangLagu456.CC] _thuy - girls like me don’t cry (Lyrics).mp3" alt="audio/mpeg">
+</audio>
+</p>
+<center>
+<p style="margin-bottom: 50px"></p>
+</body>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contoh Audio</title>
+    <title>Form Pendaftaran - Ansori Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            padding: 1em;
+            background: #f9f9f9;
+            border: 1px solid #c1c1c1;
+            margin: 2rem auto;
+            max-width: 600px;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select {
+            width: calc(100% - 100px);
+            padding: 0.7em;
+            margin-bottom: 1rem;
+            border: 1px solid #9c9c9c;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 0.7em;
+            border: none;
+            background: lightgrey;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: green;
+            color: white;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        @media (min-width: 400px) {
+            label {
+                float: left;
+                width: 30%;
+            }
+            input, select, button {
+                float: right;
+                width: 65%;
+            }
+        }
+    </style>
+</head>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pemesanan Buku</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, td, th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
 
-<audio controls autoplay>
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+    <h2>Formulir Pemesanan Buku</h2>
+    
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <th>Nama</th>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <th>Nomor Anggota Perpustakaan</th>
+                <td><input type="text" name="nomor_anggota" required></td>
+            </tr>
+            <tr>
+                <th>Tanggal Pemesanan</th>
+                <td><input type="date" name="tanggal_pemesanan" required></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>No Telepon</th>
+                <td><input type="text" name="no_telepon" required></td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>
+                    <input type="radio" name="jenis_kelamin" value="Laki-laki" required> Laki-laki
+                    <input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan
+                </td>
+            </tr>
+            <tr>
+                <th>Penulis Buku</th>
+                <td><input type="text" name="penulis_buku" required></td>
+            </tr>
+            <tr>
+                <th>No ISBN</th>
+                <td><input type="text" name="no_isbn" required></td>
+            </tr>
+            <tr>
+                <th>Judul Buku yang Dipesan</th>
+                <td><input type="text" name="judul_buku" required></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 
 </body>
-</html>
-
+</html>		
 
