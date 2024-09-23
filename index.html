@@ -5,15 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Universitas Unpar</title>
-    <!-- Link to External Style Sheet -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Internal Style Sheet -->
     <style>
         body {
             background-image: url("https://wallpapercave.com/wp/wp4735271.jpg");
             background-repeat: no-repeat;
-            background-size: 100% 100%;
+            background-size: cover;
             background-attachment: fixed;
             color: white;
             font-family: Arial, sans-serif;
@@ -43,11 +40,34 @@
             background-color: red;
         }
 
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
         .book {
             border: 1px solid #ccc;
             padding: 10px;
             margin: 10px;
             background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
         }
     </style>
 </head>
@@ -62,68 +82,157 @@
 <p style="font-size: 23px;">Perkenalkan, nama saya Stevanus Ketaren dengan NIM 222201023. Ini adalah perpustakaan <i>homepage</i></p>
 
 <h3>Berikut ini adalah gambar dari gedung Perpustakaan UNPAR.</h3>
-<h4><center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-hBxWYmhaxEVfIPeFCIcQ1zo6xXmUV5HuAg&s.jpg" style="box-shadow: 3px 3px 3px rgba(0,0,0,0.8);" alt="Perpustakaan UNPAR"/></center></h4>
+<center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-hBxWYmhaxEVfIPeFCIcQ1zo6xXmUV5HuAg&s.jpg" alt="Gambar Gedung Perpustakaan UNPAR"/></center>
 <p style="margin-bottom: 50px;"><i>Perpustakaan Unpar</i></p>
 
-<p style="margin-bottom: 50px;">
-    <video controls width="50%">
-        <source src="https://www.youtube.com/embed/8PXxcX_g8SY?si=cujBHOibKxg4RPd0" type="video/mp4">
-    </video>
+<p>
+    <iframe width="50%" height="315" src="https://www.youtube.com/embed/8PXxcX_g8SY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 <p><h6>Berikut adalah video Profil Perpustakaan UNPAR</h6></p>
 
 <p style="margin-bottom: 50px;">
     <audio controls>
-        <source src="image/[GudangLagu456.CC] _thuy - girls like me don’t cry (Lyrics).mp3" type="audio/mpeg">
+        <source src="path/to/your/audio/file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 </p>
-
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
 <h2>Formulir Pemesanan Buku</h2>
 <form action="#" method="post">
     <table>
         <tr>
-            <th>Nama</th>
-            <td><input type="text" name="nama" required></td>
+            <th><label for="nama">Nama</label></th>
+            <td><input type="text" id="nama" name="nama" required></td>
         </tr>
         <tr>
-            <th>Nomor Anggota Perpustakaan</th>
-            <td><input type="text" name="nomor_anggota" required></td>
+            <th><label for="nomor_anggota">Nomor Anggota Perpustakaan</label></th>
+            <td><input type="text" id="nomor_anggota" name="nomor_anggota" required></td>
         </tr>
         <tr>
-            <th>Tanggal Pemesanan</th>
-            <td><input type="date" name="tanggal_pemesanan" required></td>
+            <th><label for="tanggal_pemesanan">Tanggal Pemesanan</label></th>
+            <td><input type="date" id="tanggal_pemesanan" name="tanggal_pemesanan" required></td>
         </tr>
         <tr>
-            <th>Email</th>
-            <td><input type="email" name="email" required></td>
+            <th><label for="email">Email</label></th>
+            <td><input type="email" id="email" name="email" required></td>
         </tr>
         <tr>
-            <th>No Telepon</th>
-            <td><input type="text" name="no_telepon" required></td>
+            <th><label for="no_telepon">No Telepon</label></th>
+            <td><input type="text" id="no_telepon" name="no_telepon" required></td>
         </tr>
         <tr>
             <th>Jenis Kelamin</th>
             <td>
-                <input type="radio" name="jenis_kelamin" value="Laki-laki" required> Laki-laki
-                <input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan
+                <input type="radio" id="laki_laki" name="jenis_kelamin" value="Laki-laki" required> <label for="laki_laki">Laki-laki</label>
+                <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required> <label for="perempuan">Perempuan</label>
             </td>
         </tr>
         <tr>
-            <th>Penulis Buku</th>
-            <td><input type="text" name="penulis_buku" required></td>
+            <th><label for="penulis_buku">Penulis Buku</label></th>
+            <td><input type="text" id="penulis_buku" name="penulis_buku" required></td>
         </tr>
         <tr>
-            <th>No ISBN</th>
-            <td><input type="text" name="no_isbn" required></td>
+            <th><label for="no_isbn">No ISBN</label></th>
+            <td><input type="text" id="no_isbn" name="no_isbn" required></td>
         </tr>
         <tr>
-            <th>Judul Buku yang Dipesan</th>
-            <td><input type="text" name="judul_buku" required></td>
+            <th><label for="judul_buku">Judul Buku yang Dipesan</label></th>
+            <td><input type="text" id="judul_buku" name="judul_buku" required></td>
         </tr>
     </table>
     <br>
     <input type="submit" value="Submit">
 </form>
+<h2>Formulir Pemesanan Buku</h2>
+    
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <th>Nama</th>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <th>Nomor Anggota Perpustakaan</th>
+                <td><input type="text" name="nomor anggota perpustakaan" required></td>
+            </tr>
+            <tr>
+                <th>Tanggal Pemesanan</th>
+                <td><textarea name="Tanggal Pemesanan" rows="3" required></textarea></td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>
+                    <input type="radio" name="jenis_kelamin" value="Laki-laki" required> Laki-laki
+                    <input type="radio" name="jenis_kelamin" value="Perempuan" required> Perempuan
+                </td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>No HP</th>
+                <td><input type="text" name="no_hp" required></td>
+            </tr>
+            <tr>
+                <th>Penulis Buku</th>
+                <td><input type="text" name="Penulis Buku" required></td>
+            </tr>
+            <tr>
+                <th>No ISBN</th>
+               <td><input type="text" name="no isbn" required></td>
+            </tr>
+             <tr>
+                <th>Judul Buku Yang Dipesan</th>
+                <td><input type="text" name="judul buku yang dipesan" required></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 
 </body>
+<h2>Formulir Perpanjangan peminjaman buku </h2>
+    
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <th>Nama</th>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <th>Nomor Anggota Perpustakaan</th>
+                <td><input type="text" name="nomor anggota perpustakaan" required></td>
+            </tr>
+            <tr>
+                <th>Tanggal Pemesanan</th>
+                <td><textarea name="Tanggal Peminjamanan" rows="3" required></textarea></td>
+            </tr>
+          
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>No Telepon</th>
+                <td><input type="text" name="no telepon" required></td>
+            </tr>
+           
+            <tr>
+                <th>No ISBN</th>
+                <td><input type="text" name="no isbn" required></td>
+            </tr>
+             <tr>
+                <th>Tanggal Perpanjangan Buku</th>
+                <td><input type="date" name="Tanggal perpanjangan buku" required></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
 </html>
+
