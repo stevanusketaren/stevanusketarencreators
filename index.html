@@ -167,44 +167,62 @@ p {
     </form>
 
 </body>
-<h2>Formulir Perpanjangan peminjaman buku </h2>
-    
-    <form action="#" method="post">
-        <table>
-            <tr>
-                <th>Nama</th>
-                <td><input type="text" name="nama" required></td>
-            </tr>
-            <tr>
-                <th>Nomor Anggota Perpustakaan</th>
-                <td><input type="text" name="nomor anggota perpustakaan" required></td>
-            </tr>
-            <tr>
-                <th>Tanggal Pemesanan</th>
-                <td><textarea name="Tanggal Peminjamanan" rows="3" required></textarea></td>
-            </tr>
-          
-            <tr>
-                <th>Email</th>
-                <td><input type="email" name="email" required></td>
-            </tr>
-            <tr>
-                <th>No Telepon</th>
-                <td><input type="text" name="no telepon" required></td>
-            </tr>
-           
-            <tr>
-                <th>No ISBN</th>
-                <td><input type="text" name="no isbn" required></td>
-            </tr>
-             <tr>
-                <th>Tanggal Perpanjangan Buku</th>
-                <td><input type="date" name="Tanggal perpanjangan buku" required></td>
-            </tr>
-        </table>
-        <br>
-        <input type="submit" value="Submit">
-    </form>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #008fd7;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+th {
+    text-align: left;
+    padding: 10px 0;
+}
+
+td {
+    padding: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="date"], textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #008fd7;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #006bb3;
+}
+
    <title>Tabel Buku Ekonomi Pembangunan</title>
     <style>
         body {
