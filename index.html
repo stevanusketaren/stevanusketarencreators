@@ -166,8 +166,10 @@ p {
         <input type="submit" value="Submit">
     </form>
 
-</body>
-body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Perpanjangan Peminjaman Buku</title>
+    <link rel="stylesheet" href="styles.css"> <body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
@@ -200,7 +202,10 @@ td {
     padding: 10px;
 }
 
-input[type="text"], input[type="email"], input[type="date"], textarea {
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -222,6 +227,48 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #006bb3;
 }
+>
+<body>
+
+<h2>Formulir Perpanjangan Peminjaman Buku</h2>
+
+<form action="#" method="post">
+    <table>
+        <tr>
+            <th>Nama</th>
+            <td><input type="text" name="nama" required></td>
+        </tr>
+        <tr>
+            <th>Nomor Anggota Perpustakaan</th>
+            <td><input type="text" name="nomor_anggota_perpustakaan" required></td>
+        </tr>
+        <tr>
+            <th>Tanggal Pemesanan</th>
+            <td><textarea name="tanggal_peminjaman" rows="3" required></textarea></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="email" name="email" required></td>
+        </tr>
+        <tr>
+            <th>No Telepon</th>
+            <td><input type="text" name="no_telepon" required></td>
+        </tr>
+        <tr>
+            <th>No ISBN</th>
+            <td><input type="text" name="no_isbn" required></td>
+        </tr>
+        <tr>
+            <th>Tanggal Perpanjangan Buku</th>
+            <td><input type="date" name="tanggal_perpanjangan_buku" required></td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+
+</body>
 
    <title>Tabel Buku Ekonomi Pembangunan</title>
     <style>
