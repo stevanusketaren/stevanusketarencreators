@@ -90,7 +90,142 @@
                 <td>2019</td>
                 <td>Tersedia</td>
             </tr>
-            <!-- Add more rows as needed -->
+             <tr>
+                <td>4</td>
+                <td>Politik dan Kekuasaan</td>
+                <td>Maria C. L.</td>
+                <td>978-602-0014-567</td>
+                <td>2019</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Ekonomi Mikro dan Makro</td>
+                <td>Julius R. Simanjuntak</td>
+                <td>978-602-0015-678</td>
+                <td>2023</td>
+                <td>Tidak Tersedia</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Teori Sosial Modern</td>
+                <td>Ali K. Santosa</td>
+                <td>978-602-0016-789</td>
+                <td>2022</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Etika dan Moral</td>
+                <td>Devi P. T.</td>
+                <td>978-602-0017-890</td>
+                <td>2021</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Pemikiran Politik Kontemporer</td>
+                <td>Rizky A. W.</td>
+                <td>978-602-0018-901</td>
+                <td>2020</td>
+                <td>Tidak Tersedia</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Pengantar Filsafat</td>
+                <td>Sinta R. K.</td>
+                <td>978-602-0019-012</td>
+                <td>2019</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Psikologi Sosial</td>
+                <td>Hendra P. R.</td>
+                <td>978-602-0020-123</td>
+                <td>2022</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Komunikasi dan Masyarakat</td>
+                <td>Indra S. W.</td>
+                <td>978-602-0021-234</td>
+                <td>2021</td>
+                <td>Tidak Tersedia</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Pengantar Ekonomi</td>
+                <td>Sandi F. M.</td>
+                <td>978-602-0022-345</td>
+                <td>2020</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Dasar-Dasar Sosiologi</td>
+                <td>Diana L. P.</td>
+                <td>978-602-0023-456</td>
+                <td>2019</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Etika dalam Bisnis</td>
+                <td>Rudi H. Siregar</td>
+                <td>978-602-0024-567</td>
+                <td>2023</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Filsafat dan Pendidikan</td>
+                <td>Winda R. T.</td>
+                <td>978-602-0025-678</td>
+                <td>2022</td>
+                <td>Tidak Tersedia</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Globalisasi dan Identitas</td>
+                <td>Muhammad Z. R.</td>
+                <td>978-602-0026-789</td>
+                <td>2021</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Teori Politik dan Praktik</td>
+                <td>Fanny C. W.</td>
+                <td>978-602-0027-890</td>
+                <td>2020</td>
+                <td>Tidak Tersedia</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Analisis Kebijakan Publik</td>
+                <td>Adrian S. N.</td>
+                <td>978-602-0028-901</td>
+                <td>2019</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Metode Penelitian Sosial</td>
+                <td>Vera D. T.</td>
+                <td>978-602-0029-012</td>
+                <td>2022</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Teori dan Praktik Sosiologi</td>
+                <td>Rina H. J.</td>
+                <td>978-602-0030-123</td>
+                <td>2023</td>
+                <td>Tidak Tersedia</td>
+            </tr>
         </tbody>
     </table>
 </section>
