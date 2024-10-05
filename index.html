@@ -4,67 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Stevanus Ketaren</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('https://media.istockphoto.com/id/1469958688/id/foto/dinding-bata-biru-ungu-latar-belakang-gaya-cyberpunk-warna-futuristik-desain-kreatif-modern.jpg?s=1024x1024&w=is&k=20&c=T7X32it6Gj-j2QoNvsoW3QPCP6Lm6CF6x2iLm-I2iIA=');
-    background-size: cover; /* Mengatur gambar agar menutupi seluruh area */
-    background-position: center; /* Memusatkan gambar */
-    color: white; /* Mengubah warna teks menjadi putih untuk kontras */
-    text-align: center;
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media.istockphoto.com/id/1469958688/id/foto/dinding-bata-biru-ungu-latar-belakang-gaya-cyberpunk-warna-futuristik-desain-kreatif-modern.jpg?s=1024x1024&w=is&k=20&c=T7X32it6Gj-j2QoNvsoW3QPCP6Lm6CF6x2iLm-I2iIA=');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
 
-h1 {
-    margin-top: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin: 10px 0;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-p {
-    margin: 10px 0;
-}
-
+        .mainmenubtn {
+            background-color: skyblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .mainmenubtn:hover {
+            background-color: blue;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-child {
+            display: none;
+            background-color: skyblue;
+            min-width: 200px;
+            position: absolute;
+            z-index: 1;
+        }
+        .dropdown-child a {
+            color: blue;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-child {
+            display: block;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
     </style>
 </head>
 <body>
 
-<ul>
-    <li><a href="https://stevanusketaren.github.io/index.html">Tugas Buat Web</a></li>
-</ul>
+    <div class="dropdown">
+        <button class="mainmenubtn">Main Menu</button>
+        <div class="dropdown-child">
+            <a href="http://www.yourdomain.com/page1.html">Sub Menu 1</a>
+            <a href="http://www.yourdomain.com/page2.html">Sub Menu 2</a>
+            <a href="http://www.yourdomain.com/page3.html">Sub Menu 3</a>
+            <a href="http://www.yourdomain.com/page4.html">Sub Menu 4</a>
+            <a href="http://www.yourdomain.com/page5.html">Sub Menu 5</a>
+        </div>
+    </div>
 
-<p><center><u>Perpustakaan Stevanus Ketaren</u></center></p>
-<p style="font-size: 25px;"><strong>Perkenalan</strong></p>
-<p style="font-size: 23px;">Perkenalkan, nama saya Stevanus Ketaren dengan NIM 222201023. Ini adalah perpustakaan <i>homepage</i></p>
+    <div class="container">
+        <h1>Perpustakaan Stevanus Ketaren</h1>
+        <p><u>Perkenalan</u></p>
+        <p style="font-size: 23px;">Perkenalkan, nama saya Stevanus Ketaren dengan NIM 222201023. Ini adalah perpustakaan <i>homepage</i></p>
 
-<h3>Berikut ini adalah gambar dari gedung Perpustakaan UNPAR.</h3>
-<center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-hBxWYmhaxEVfIPeFCIcQ1zo6xXmUV5HuAg&s.jpg" alt="Gambar Gedung Perpustakaan UNPAR"/></center>
-<p style="margin-bottom: 50px;"><i>Perpustakaan Unpar</i></p>
+        <h3>Berikut ini adalah gambar dari gedung Perpustakaan UNPAR.</h3>
+        <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-hBxWYmhaxEVfIPeFCIcQ1zo6xXmUV5HuAg&s.jpg" alt="Gambar Gedung Perpustakaan UNPAR" /></center>
+        <p><i>Perpustakaan Unpar</i></p>
 
-<p>
-    <iframe width="50%" height="315" src="https://www.youtube.com/embed/8PXxcX_g8SY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-<p><h6>Berikut adalah video Profil Perpustakaan UNPAR</h6></p>
-
+        <p>
+            <iframe width="50%" height="315" src="https://www.youtube.com/embed/8PXxcX_g8SY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        <h6>Berikut adalah video Profil Perpustakaan UNPAR</h6>
 <p style="margin-bottom: 50px;">
     <audio controls>
         <source src="music/Eminem - Mockingbird [Official Music Video].mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 </p>
+<div class="row">
+            <!-- Kolom I -->
+            <div class="column">
+                <h2>Selamat Datang di Website Perpustakaan SUKA BACA</h2>
+            </div>
+
+            <!-- Kolom II -->
+            <div class="column">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Judul Buku</th>
+                            <th>Pengarang</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Buku A</td>
+                            <td>Pengarang A</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Buku B</td>
+                            <td>Pengarang B</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Buku C</td>
+                            <td>Pengarang C</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Kolom III -->
+            <div class="column">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nama:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Masukkan nama">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Masukkan email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
 
@@ -357,27 +442,7 @@ input[type="submit"]:hover {
 </section>
 </body>
         kodingan 5
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Buah</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <h1 class="text-center">Daftar Buah</h1>
-        <ul class="list-group">
-            <li class="list-group-item">Apel</li>
-            <li class="list-group-item">Pisang</li>
-            <li class="list-group-item">Jeruk</li>
-            <li class="list-group-item">Manggis</li>
-            <li class="list-group-item">Anggur</li>
-            <li class="list-group-item">Strawberry</li>
-            <li class="list-group-item">Kiwi</li>
-        </ul>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 
 
