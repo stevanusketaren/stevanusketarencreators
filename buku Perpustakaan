@@ -1,1 +1,99 @@
-buku
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Buku Ekonomi Pembangunan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url('https://st4.depositphotos.com/38616904/41409/i/450/depositphotos_414099294-stock-photo-abstract-technology-science-polygonal-space.jpg');
+            background-size: cover;
+            color: #333;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #008fd7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #008fd7;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <h2>Tabel Buku Ekonomi Pembangunan Perpustakaan UNPAR</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Judul Buku</th>
+                <th>Penulis</th>
+                <th>No ISBN</th>
+                <th>Tahun Terbit</th>
+                <th>Ketersediaan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Ekonomi Pembangunan: Teori dan Praktik</td>
+                <td>Julius R. Simanjuntak</td>
+                <td>978-602-1234-567</td>
+                <td>2021</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pengantar Ekonomi Pembangunan</td>
+                <td>Siti A. Wahid</td>
+                <td>978-602-5678-901</td>
+                <td>2020</td>
+                <td>Tidak Tersedia</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Strategi Pembangunan Ekonomi</td>
+                <td>Rudi H. Siregar</td>
+                <td>978-979-7890-123</td>
+                <td>2019</td>
+                <td>Tersedia</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>
