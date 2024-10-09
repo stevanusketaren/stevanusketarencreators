@@ -1,1 +1,94 @@
-d
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Koleksi Buku</title>
+    <style>
+        .numericcol {
+            text-align: right;
+        }
+        .rightcolpad {
+            text-align: right;
+            padding-right: 20px;
+        }
+        .centercol {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tfoot th {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="mytbl1">
+        <table>
+            <thead>
+                <tr>
+                    <th>NAMA FAKULTAS</th>
+                    <th>NO</th>
+                    <th>KOLEKSI BUKU</th>
+                    <th>JUDUL</th>
+                    <th>EKSEMPLAR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data Rows -->
+                <tr>
+                    <td>Ekonomi dan Bisnis</td>
+                    <td class="numericcol">1</td>
+                    <td>000 = Karya Umum</td>
+                    <td class="numericcol">217</td>
+                    <td class="numericcol">974</td>
+                </tr>
+                <tr>
+                    <td>Ekonomi dan Bisnis</td>
+                    <td class="numericcol">2</td>
+                    <td>100 = Falsafah</td>
+                    <td class="numericcol">100</td>
+                    <td class="numericcol">253</td>
+                </tr>
+                <!-- (additional rows go here) -->
+                <tr>
+                    <td>Pertanian</td>
+                    <td class="numericcol">10</td>
+                    <td>900 = Sejarah dan Geografi</td>
+                    <td class="numericcol">48</td>
+                    <td class="numericcol">98</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2">TOTAL</th>
+                    <th>&nbsp;</th>
+                    <th class="numericcol">27935</th>
+                    <th class="numericcol">96573</th>
+                </tr>
+            </tfoot>
+        </table>
+        <div style="margin: 20px auto; text-align: center;">
+            Data Tanggal: 9/10/2024
+        </div>
+    </div>
+
+    <div class="az-footer ht-40">
+        <div class="container ht-100p pd-t-0-f">
+            <span>© 2022 unsoed.ac.id</span>
+        </div>
+    </div>
+
+    <script src="/assets/7f0f5c40/yii.js"></script>
+</body>
+</html>
