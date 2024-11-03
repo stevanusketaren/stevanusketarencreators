@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pameran Buku - Perpustakaan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .book-list {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pameran Buku</h1>
+<p>Klik tombol di bawah ini untuk melihat informasi tentang buku yang akan dipamerkan.</p>
+<button id="showBooksButton">Tampilkan Buku</button>
+
+<div id="bookList" class="book-list" style="display: none;"></div>
+
+<script>
+    const books = [
+        {
+            title: "The 48 Laws of Power",
+            author: "Robert Greene",
+            rating: "4.7 out of 5 stars",
+            ratingsCount: 80692,
+            description: "Amoral, cunning, ruthless, and instructive, this multi-million-copy New York Times bestseller is the definitive manual for anyone interested in gaining, observing, or defending against ultimate control.",
+            laws: [
+                "Law 1: Never Outshine the Master",
+                "Law 28: Enter Action with Boldness",
+                "Law 15: Crush Your Enemy Totally"
+            ]
+        }
+    ];
+
+    document.getElementById("showBooksButton").addEventListener("click", function() {
+        let bookListDiv = document.getElementById("bookList");
+        bookListDiv.innerHTML = ""; // Clear previous content
+        bookListDiv.style.display = "block"; // Show the book list
+
+        if (books.length > 0) {
+            let book = books[0]; // Get the first book
+            let bookContent = `<h2>${book.title}</h2>
+                               <p>Oleh: ${book.author}</p>
+                               <p>Rating: ${book.rating} (${book.ratingsCount} ratings)</p>
+                               <p>${book.description}</p>
+                               <h3>Beberapa Hukum:</h3><ul>`;
+            for (let i = 0; i < book.laws.length; i++) {
+                bookContent += `<li>${book.laws[i]}</li>`;
+            }
+            bookContent += "</ul>";
+            bookListDiv.innerHTML = bookContent;
+        } else {
+            bookListDiv.innerHTML = "<p>Tidak ada buku yang tersedia.</p>";
+        }
+    });
+</script>
+
+</body>
+</html>
