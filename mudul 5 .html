@@ -20,6 +20,7 @@
             color: white;
             border: none;
             cursor: pointer;
+            margin-top: 10px;
         }
         button:hover {
             background-color: #0056b3;
@@ -29,6 +30,12 @@
             padding: 10px;
             border: 1px solid #ddd;
             background-color: #fff;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -52,7 +59,8 @@
                 "Law 1: Never Outshine the Master",
                 "Law 28: Enter Action with Boldness",
                 "Law 15: Crush Your Enemy Totally"
-            ]
+            ],
+            imageUrl: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//98/MTA-40217857/brd-44261_original-si-anak-pintar-buku-novel-indonesia_full01.jpg"
         }
     ];
 
@@ -66,6 +74,7 @@
             let bookContent = `<h2>${book.title}</h2>
                                <p>Oleh: ${book.author}</p>
                                <p>Rating: ${book.rating} (${book.ratingsCount} ratings)</p>
+                               <img src="${book.imageUrl}" alt="${book.title}" />
                                <p>${book.description}</p>
                                <h3>Beberapa Hukum:</h3><ul>`;
             for (let i = 0; i < book.laws.length; i++) {
@@ -81,3 +90,5 @@
 
 </body>
 </html>
+
+
