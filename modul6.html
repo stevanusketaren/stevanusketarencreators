@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Perpustakaan Digital</h1>
+        <p>Selamat datang di Perpustakaan Digital. Tambahkan buku baru dan lihat daftar buku yang tersedia!</p>
+    </header>
+
+    <section id="form-section">
+        <h2>Tambah Buku Baru</h2>
+        <form id="book-form">
+            <label for="title">Judul Buku:</label>
+            <input type="text" id="title" required>
+            <label for="author">Penulis:</label>
+            <input type="text" id="author" required>
+            <label for="year">Tahun Terbit:</label>
+            <input type="number" id="year" required>
+            <button type="submit">Tambah Buku</button>
+        </form>
+    </section>
+
+    <section id="book-list">
+        <h2>Daftar Buku</h2>
+        <ul id="books"></ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
