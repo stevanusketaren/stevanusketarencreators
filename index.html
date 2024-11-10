@@ -39,7 +39,7 @@
             display: none;
             position: absolute;
             top: 0;
-            left: 100%;
+            left: 100%; /* Menempatkan submenu di sebelah kanan */
             background-color: #f9f9f9;
             padding: 10px 0;
             min-width: 160px;
@@ -47,7 +47,7 @@
             z-index: 1;
         }
 
-        /* Menampilkan submenu saat hover */
+        /* Menampilkan submenu saat hover pada link utama */
         .dropdown:hover > ul {
             display: block;
         }
@@ -63,12 +63,12 @@
 
         /* Submenu untuk item yang memiliki submenu lebih lanjut */
         .dropdown ul li ul {
-            left: 100%;
+            left: 100%; /* Menempatkan submenu kedua di sebelah kanan */
             top: 0;
             display: none;
         }
 
-        /* Menampilkan submenu kedua */
+        /* Menampilkan submenu kedua saat hover */
         .dropdown ul li:hover > ul {
             display: block;
         }
@@ -223,6 +223,7 @@
 
 </body>
 </html>
+
 
 
 
