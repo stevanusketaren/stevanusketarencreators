@@ -1,115 +1,82 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+nav ul {
+    background: #8A2BE2; /* Mengubah warna latar belakang menjadi #8A2BE2 */
     padding: 0;
-    background-image: url('https://media.istockphoto.com/id/1469958688/id/foto/dinding-bata-biru-ungu-latar-belakang-gaya-cyberpunk-warna-futuristik-desain-kreatif-modern.jpg?s=1024x1024&w=is&k=20&c=T7X32it6Gj-j2QoNvsoW3QPCP6Lm6CF6x2iLm-I2iIA=');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-}
-
-.navbar {
-    margin-bottom: 0;
-}
-
-.mainmenubtn {
-    background-color: skyblue;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 4px;
-}
-
-.mainmenubtn:hover {
-    background-color: blue;
-}
-
-.dropdown {
+    list-style: none;
     position: relative;
-    display: inline-block;
-    margin: 10px;
+    width: 100%;
+    font-family: 'Helvetica', Arial, sans-serif;
 }
 
-.dropdown-content {
+nav ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li:hover {
+    background-color: #7B1FA2; /* Menyesuaikan warna latar belakang saat hover */
+}
+
+nav ul li a {
+    display: block;
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #fff;
+    background: #7B1FA2; /* Mengubah latar belakang saat fokus dan hover */
+}
+
+nav ul ul {
     display: none;
-    background-color: skyblue;
-    min-width: 200px;
+    background: #8A2BE2; /* Menjaga konsistensi warna dropdown */
+    padding: 0;
     position: absolute;
-    z-index: 1;
-    border-radius: 4px;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    top: 100%;
+    max-width: 300px;
+    width: auto;
 }
 
-.dropdown:hover .dropdown-content {
+nav ul ul li {
+    float: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+nav ul li:hover > ul,
+nav ul li:focus-within > ul { /* Menampilkan dropdown saat fokus pada item induk */
     display: block;
 }
 
-.dropdown-content ul {
-    display: flex; /* Flexbox untuk menyusun sub-menu secara horizontal */
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+nav ul ul li a {
+    padding: 10px 40px;
+    color: #fff;
 }
 
-.dropdown-content li {
-    margin-right: 20px; /* Memberikan jarak antara sub-menu */
+nav ul ul li a:hover,
+nav ul ul li a:focus {
+    background: #7B1FA2; /* Mengubah latar belakang saat hover pada submenu */
 }
 
-.dropdown-content a {
-    color: blue;
-    padding: 12px;
-    text-decoration: none;
-    display: block;
+nav ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 200px;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.menu li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-.menu a {
-    color: white;
-    text-decoration: none;
-}
-
-.menu a:hover {
-    color: skyblue;
-}
-
-.container {
-    margin-top: 20px;
-}
-
-.row {
-    margin-top: 20px;
-}
-
-.column {
-    padding: 10px;
-}
-
-.header {
-    padding: 50px;
-}
-
-.header h1 {
-    font-size: 40px;
-}
+/* Responsivitas */
 @media (max-width: 768px) {
-    .dropdown-content ul {
-        flex-direction: column; /* Mengubah submenu menjadi vertikal pada layar kecil */
+    nav ul {
+        display: block; /* Mengubah menu menjadi blok di perangkat kecil */
     }
-
-    .dropdown-content li {
-        margin-right: 0;
+    nav ul li {
+        float: none; /* Menghapus float pada item menu */
     }
 }
