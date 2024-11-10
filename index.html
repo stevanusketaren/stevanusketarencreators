@@ -70,13 +70,18 @@
           background-color: #ddd;
         }
 
-        /* Tampilkan sub-dropdown saat hover pada link utama */
-        .dropdown-content a:hover .sub-dropdown {
+        /* Tampilkan submenu saat hover pada link utama */
+        .dropdown-content > a:hover .sub-dropdown {
           display: block;
         }
 
         /* Tampilkan konten dropdown saat hover pada tombol dropdown */
         .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        /* Pastikan submenu juga muncul jika hover pada elemen dropdown */
+        .dropdown:hover .sub-dropdown {
           display: block;
         }
     </style>
@@ -150,6 +155,7 @@
 
 </body>
 </html>
+
 
 
 
