@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://media.istockphoto.com/id/1469958688/id/foto/dinding-bata-biru-ungu-latar-belakang-gaya-cyberpunk-warna-futuristik-desain-kreatif-modern.jpg?s=1024x1024&w=is&k=20&c=T7X32it6Gj-j2QoNvsoW3QPCP6Lm6CF6x2iLm-I2iIA=');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.mainmenubtn {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.mainmenubtn:hover {
+    background-color: blue;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: skyblue;
+    min-width: 200px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 4px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content ul {
+    display: flex; /* Flexbox untuk menyusun sub-menu secara horizontal */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.dropdown-content li {
+    margin-right: 20px; /* Memberikan jarak antara sub-menu */
+}
+
+.dropdown-content a {
+    color: blue;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: skyblue;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.column {
+    padding: 10px;
+}
+
+.header {
+    padding: 50px;
+}
+
+.header h1 {
+    font-size: 40px;
+}
+@media (max-width: 768px) {
+    .dropdown-content ul {
+        flex-direction: column; /* Mengubah submenu menjadi vertikal pada layar kecil */
+    }
+
+    .dropdown-content li {
+        margin-right: 0;
+    }
+}
