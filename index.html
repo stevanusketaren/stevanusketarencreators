@@ -31,6 +31,7 @@
       top: 0;
       left: 0;
       z-index: 100;
+      padding: 10px 0; /* Menambahkan padding vertikal pada navbar */
     }
 
     /* Link utama */
@@ -51,7 +52,7 @@
     /* Dropdown menu */
     .dropdown {
       float: left;
-      overflow: hidden;
+      position: relative; /* Untuk memastikan submenu posisinya relatif terhadap dropdown */
     }
 
     .dropdown .dropbtn {
@@ -69,11 +70,12 @@
     }
 
     .dropdown-content {
-      display: none;
+      display: none; /* Menyembunyikan submenu secara default */
       position: absolute;
       background-color: #333;
       min-width: 160px;
       z-index: 1;
+      margin-top: 10px; /* Menambahkan jarak antara dropdown dan navbar */
     }
 
     .dropdown-content a {
@@ -88,6 +90,7 @@
       color: black;
     }
 
+    /* Menampilkan submenu saat dropdown dihover */
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -98,8 +101,14 @@
     }
 
     .dropdown-submenu .dropdown-content {
-      top: 0;
-      left: 100%;
+      display: none; /* Submenu tidak akan terlihat secara default */
+      position: absolute;
+      left: 100%; /* Memastikan submenu muncul di samping */
+      margin-left: 10px; /* Memberikan jarak antara submenu dan menu induk */
+    }
+
+    .dropdown-submenu:hover .dropdown-content {
+      display: block; /* Submenu muncul ketika hover pada submenu */
     }
 
     /* Style untuk konten utama */
@@ -207,6 +216,16 @@
       </div>
     </div>
   </div>
+
+  <!-- Konten Utama -->
+  <div class="content">
+    <h2>Selamat datang di halaman utama!</h2>
+    <p>Silakan pilih menu di atas untuk mulai menjelajah modul dan submodul.</p>
+  </div>
+
+</body>
+</html>
+
 
 
 
