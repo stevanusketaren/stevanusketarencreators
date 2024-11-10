@@ -18,6 +18,10 @@
             text-align: center;
         }
 
+        .navbar {
+            margin-bottom: 0;
+        }
+
         .mainmenubtn {
             background-color: skyblue;
             color: white;
@@ -62,18 +66,6 @@
             background-color: #f1f1f1;
         }
 
-        .container {
-            margin-top: 20px;
-        }
-
-        .row {
-            margin-top: 20px;
-        }
-
-        .column {
-            padding: 10px;
-        }
-
         /* Styling for the menu */
         .menu li {
             display: inline-block;
@@ -88,106 +80,119 @@
         .menu a:hover {
             color: skyblue;
         }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .row {
+            margin-top: 20px;
+        }
+
+        .column {
+            padding: 10px;
+        }
+
+        /* Styling the main header */
+        .header {
+            padding: 50px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Main Menu with 3 items -->
+    <!-- Navbar with Dropdown Menu -->
+    <div class="header">
+        <h1>Selamat Datang di Perpustakaan Stevanus Ketaren</h1>
+        <p>Temukan berbagai modul dan materi pembelajaran di sini.</p>
+    </div>
+
+    <!-- Main Dropdown Menu -->
     <div class="dropdown">
-        <button class="mainmenubtn">Menu 1</button>
+        <button class="mainmenubtn">Dropdown Menu</button>
         <div class="dropdown-content">
             <ul>
-                <li><a href="modul5.html">Sub Menu 1.1</a></li>
-                <li><a href="modul5.html">Sub Menu 1.2</a></li>
-                <li><a href="#">Sub Menu 1.3</a></li>
-                <li><a href="#">Sub Menu 1.4</a></li>
-                <li><a href="#">Sub Menu 1.5</a></li>
-                <li><a href="#">Sub Menu 1.6</a></li>
-                <li><a href="#">Sub Menu 1.7</a></li>
-                <li><a href="#">Sub Menu 1.8</a></li>
+                <li><a href="#">Sub Menu 1</a></li>
+                <li><a href="#">Sub Menu 2</a></li>
+                <li><a href="#">Sub Menu 3</a></li>
             </ul>
         </div>
     </div>
 
-    <div class="dropdown">
-        <button class="mainmenubtn">Menu 2</button>
-        <div class="dropdown-content">
-            <ul>
-                <li><a href="#">Sub Menu 2.1</a></li>
-                <li><a href="#">Sub Menu 2.2</a></li>
-                <li><a href="#">Sub Menu 2.3</a></li>
-                <li><a href="#">Sub Menu 2.4</a></li>
-                <li><a href="#">Sub Menu 2.5</a></li>
-                <li><a href="#">Sub Menu 2.6</a></li>
-                <li><a href="#">Sub Menu 2.7</a></li>
-                <li><a href="#">Sub Menu 2.8</a></li>
-            </ul>
-        </div>
+    <!-- Modul Menu -->
+    <div class="container">
+        <h2>Modul</h2>
+        <ul class="menu">
+            <li class="dropdown">
+                <a href="#">Modul 1</a>
+                <ul>
+                    <li><a href="#">Topik 1.1</a></li>
+                    <li><a href="#">Topik 1.2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Modul 2</a>
+                <ul>
+                    <li><a href="#">Topik 2.1</a></li>
+                    <li><a href="#">Topik 2.2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Modul 3</a>
+                <ul>
+                    <li><a href="#">Topik 3.1</a></li>
+                    <li><a href="#">Topik 3.2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Modul 4</a>
+                <ul>
+                    <li><a href="#">Topik 4.1</a></li>
+                    <li><a href="#">Topik 4.2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Modul 5</a>
+                <ul>
+                    <li><a href="#">Topik 5.1</a></li>
+                    <li><a href="#">Topik 5.2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Modul 6</a>
+                <ul>
+                    <li><a href="#">Topik 6.1</a></li>
+                    <li><a href="#">Topik 6.2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Modul 7</a>
+                <ul>
+                    <li><a href="#">Topik 7.1</a></li>
+                    <li><a href="#">Topik 7.2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Modul 8</a>
+                <ul>
+                    <li><a href="#">Topik 8.1</a></li>
+                    <li><a href="#">Topik 8.2</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
-
-    <!-- Menu Listing -->
-    <ul class="menu">
-        <li class="dropdown">
-            <a href="#">Modul 1</a>
-            <ul>
-                <li><a href="#">Topik 1.1</a></li>
-                <li><a href="#">Topik 1.2</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Modul 2</a>
-            <ul>
-                <li><a href="#">Topik 2.1</a></li>
-                <li><a href="#">Topik 2.2</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Modul 3</a>
-            <ul>
-                <li><a href="#">Topik 3.1</a></li>
-                <li><a href="#">Topik 3.2</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Modul 4</a>
-            <ul>
-                <li><a href="#">Topik 4.1</a></li>
-                <li><a href="#">Topik 4.2</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Modul 5</a>
-            <ul>
-                <li><a href="#">Topik 5.1</a></li>
-                <li><a href="#">Topik 5.2</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Modul 6</a>
-            <ul>
-                <li><a href="#">Topik 6.1</a></li>
-                <li><a href="#">Topik 6.2</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Modul 7</a>
-            <ul>
-                <li><a href="#">Topik 7.1</a></li>
-                <li><a href="#">Topik 7.2</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Modul 8</a>
-            <ul>
-                <li><a href="#">Topik 8.1</a></li>
-                <li><a href="#">Topik 8.2</a></li>
-            </ul>
-        </li>
-    </ul>
 
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
 
    
 
