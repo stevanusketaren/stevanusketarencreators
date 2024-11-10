@@ -3,124 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pameran Buku - Perpustakaan</title>
+    <title>Pameran Buku</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 20px;
         }
         h1 {
-            color: #333;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .book-list {
+            text-align: center;
             margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background-color: #fff;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 10px 0;
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .book-item {
+            position: relative;
+            width: 200px;
+            text-align: center;
+        }
+        .book-item img {
+            width: 100%;
+            cursor: pointer;
+        }
+        .description {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
 
-<h1>Pameran Buku</h1>
-<p>Klik tombol di bawah ini untuk melihat informasi tentang buku yang akan dipamerkan.</p>
-<button id="showBooksButton">Tampilkan Buku</button>
+    <h1>Pameran Buku</h1>
 
-<div id="bookList" class="book-list" style="display: none;"></div>
+    <div class="gallery">
+        <!-- Book Item 1 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" alt="Diskusi publik perempuan dan teknologi" onclick="showDescription('deskripsiBuku1')">
+            <div id="deskripsiBuku1" class="description">
+                <p><strong>Diskusi publik perempuan dan teknologi:</strong> Buku ini membahas peran perempuan dalam dunia teknologi dan pentingnya partisipasi mereka dalam berbagai aspek digital.</p>
+            </div>
+        </div>
 
-<script>
-    const books = [
-        {
-            title: "The 48 Laws of Power",
-            author: "Robert Greene",
-            rating: "4.7 out of 5 stars",
-            ratingsCount: 80692,
-            description: "Amoral, cunning, ruthless, and instructive, this multi-million-copy New York Times bestseller is the definitive manual for anyone interested in gaining, observing, or defending against ultimate control.",
-            laws: [
-                "Law 1: Never Outshine the Master",
-                "Law 28: Enter Action with Boldness",
-                "Law 15: Crush Your Enemy Totally"
-            ],
-            imageUrl: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//98/MTA-40217857/brd-44261_original-si-anak-pintar-buku-novel-indonesia_full01.jpg"
-        }
-    ];
+        <!-- Book Item 2 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/azxz/files/shot.jpg" alt="Pelatihan keamanan digital" onclick="showDescription('deskripsiBuku2')">
+            <div id="deskripsiBuku2" class="description">
+                <p><strong>Pelatihan keamanan digital:</strong> Buku ini memberikan panduan praktis tentang cara melindungi diri di dunia maya, serta pentingnya keamanan digital di era modern.</p>
+            </div>
+        </div>
 
-    document.getElementById("showBooksButton").addEventListener("click", function() {
-        let bookListDiv = document.getElementById("bookList");
-        bookListDiv.innerHTML = ""; // Clear previous content
-        bookListDiv.style.display = "block"; // Show the book list
+        <!-- Book Item 3 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/vzps/files/shot.jpg" alt="Peran dan hak perempuan di ruang digital" onclick="showDescription('deskripsiBuku3')">
+            <div id="deskripsiBuku3" class="description">
+                <p><strong>Peran dan hak perempuan di ruang digital:</strong> Buku ini mengeksplorasi hak-hak perempuan dalam dunia digital dan bagaimana teknologi bisa menjadi alat pemberdayaan.</p>
+            </div>
+        </div>
 
-        if (books.length > 0) {
-            let book = books[0]; // Get the first book
-            let bookContent = `<h2>${book.title}</h2>
-                               <p>Oleh: ${book.author}</p>
-                               <p>Rating: ${book.rating} (${book.ratingsCount} ratings)</p>
-                               <img src="${book.imageUrl}" alt="${book.title}" />
-                               <p>${book.description}</p>
-                               <h3>Beberapa Hukum:</h3><ul>`;
-            for (let i = 0; i < book.laws.length; i++) {
-                bookContent += `<li>${book.laws[i]}</li>`;
-            }
-            bookContent += "</ul>";
-            bookListDiv.innerHTML = bookContent;
-        } else {
-            bookListDiv.innerHTML = "<p>Tidak ada buku yang tersedia.</p>";
-        }
-    });
-</script>
-<html>
-<head>
-    <title>akademi.internetsehat.id</title>
-    <meta name="robots" content="max-image-preview:large"/>
-    <meta charset="utf-8" />
-    <meta name="author" content="fliphtml5.com" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="Internet Sehat by ICT Watch, bookshelf, virtual bookshelf, flipbook bookshelf, digital flipbook, e-book" />
-    
-    <meta property="og:image" content="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" />
-    <meta name="og:image" content="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" />
-    <link rel="image_src" href="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Book Item 4 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/drwl/files/shot.jpg" alt="Pemikiran utama seri diskusi kecerdasan buatan" onclick="showDescription('deskripsiBuku4')">
+            <div id="deskripsiBuku4" class="description">
+                <p><strong>Pemikiran utama seri diskusi kecerdasan buatan:</strong> Buku ini mengulas berbagai topik penting dalam kecerdasan buatan, serta dampaknya terhadap masyarakat dan industri.</p>
+            </div>
+        </div>
 
-    <script src="https://fliphtml5.com/js/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="https://fliphtml5.com/bookcase/css/bookcase.min.css" />
-</head>
+        <!-- Book Item 5 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/aoek/files/shot.jpg" alt="Dari anak muda untuk Indonesia makin cakep digital" onclick="showDescription('deskripsiBuku5')">
+            <div id="deskripsiBuku5" class="description">
+                <p><strong>Dari anak muda untuk Indonesia makin cakep digital:</strong> Buku ini menginspirasi generasi muda untuk memanfaatkan teknologi demi kemajuan bangsa dan masyarakat.</p>
+            </div>
+        </div>
 
-<body>
-    <div style="width: 0; height: 0; overflow: hidden;">
-        <img src="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" alt="Preview Image">
+        <!-- Book Item 6 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/jejk/files/shot.jpg" alt="KBGO dan pelecehan seksual daring di tempat kerja" onclick="showDescription('deskripsiBuku6')">
+            <div id="deskripsiBuku6" class="description">
+                <p><strong>KBGO dan pelecehan seksual daring di tempat kerja:</strong> Buku ini mengulas topik penting mengenai pelecehan seksual secara daring dan cara-cara untuk menghadapinya di tempat kerja.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 7 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/oivl/files/shot.jpg" alt="Indonesian Civil Society Position Paper Three Main Challenges of Indonesia's Digital Transformation" onclick="showDescription('deskripsiBuku7')">
+            <div id="deskripsiBuku7" class="description">
+                <p><strong>Indonesian Civil Society Position Paper Three Main Challenges of Indonesia's Digital Transformation:</strong> Buku ini memberikan analisis mendalam tentang tantangan yang dihadapi Indonesia dalam transformasi digital.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 8 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/mmqv/files/shot.jpg" alt="Kertas posisi masyarakat sipil tiga tantangan utama transformasi digital Indonesia" onclick="showDescription('deskripsiBuku8')">
+            <div id="deskripsiBuku8" class="description">
+                <p><strong>Kertas posisi masyarakat sipil tiga tantangan utama transformasi digital Indonesia:</strong> Buku ini menyoroti perspektif masyarakat sipil terhadap tantangan digitalisasi yang dihadapi oleh Indonesia.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 9 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/mxzw/files/shot.jpg" alt="The Unspoken Facts: Significant Challenges of Indonesian Women in Digital Issues" onclick="showDescription('deskripsiBuku9')">
+            <div id="deskripsiBuku9" class="description">
+                <p><strong>The Unspoken Facts: Significant Challenges of Indonesian Women in Digital Issues:</strong> Buku ini mengungkap tantangan-tantangan besar yang dihadapi perempuan Indonesia di dunia digital.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 10 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/dehh/files/shot.jpg" alt="Fakta yang Tak Terucapkan: Tantangan Signifikan Perempuan Indonesia dalam Isu Digital" onclick="showDescription('deskripsiBuku10')">
+            <div id="deskripsiBuku10" class="description">
+                <p><strong>Fakta yang Tak Terucapkan: Tantangan Signifikan Perempuan Indonesia dalam Isu Digital:</strong> Buku ini menggali lebih dalam tantangan yang belum banyak dibicarakan mengenai perempuan di dunia digital Indonesia.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 11 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/volu/files/shot.jpg" alt="Digital aman-aman bergerak" onclick="showDescription('deskripsiBuku11')">
+            <div id="deskripsiBuku11" class="description">
+                <p><strong>Digital aman-aman bergerak:</strong> Buku ini memberikan tips dan cara-cara untuk bergerak di dunia digital dengan aman dan penuh kehati-hatian.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 12 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/pxdc/files/shot.jpg" alt="Kreasi asyik edukasi digital untuk anak" onclick="showDescription('deskripsiBuku12')">
+            <div id="deskripsiBuku12" class="description">
+                <p><strong>Kreasi asyik edukasi digital untuk anak:</strong> Buku ini membahas cara-cara kreatif untuk memberikan edukasi digital kepada anak-anak dengan cara yang menyenangkan dan aman.</p>
+            </div>
+        </div>
+
     </div>
-    <div class="main-container"></div>
+
+    <script>
+        // Function to toggle the description visibility
+        function showDescription(id) {
+            var description = document.getElementById(id);
+            // Toggle visibility of the description
+            description.style.display = description.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
 </body>
-
-<script>
-    // Your JavaScript logic goes here
-</script>
-
 </html>
-
-
-</body>
-</html>
-
 
