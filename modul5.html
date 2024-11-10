@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pameran Buku</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .book-item {
+            position: relative;
+            width: 200px;
+            text-align: center;
+        }
+        .book-item img {
+            width: 100%;
+            cursor: pointer;
+        }
+        .description {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pameran Buku</h1>
+
+    <div class="gallery">
+        <!-- Book Item 1 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" alt="Diskusi publik perempuan dan teknologi" onclick="showDescription('deskripsiBuku1')">
+            <div id="deskripsiBuku1" class="description">
+                <p><strong>Diskusi publik perempuan dan teknologi:</strong> Buku ini membahas peran perempuan dalam dunia teknologi dan pentingnya partisipasi mereka dalam berbagai aspek digital.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 2 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/azxz/files/shot.jpg" alt="Pelatihan keamanan digital" onclick="showDescription('deskripsiBuku2')">
+            <div id="deskripsiBuku2" class="description">
+                <p><strong>Pelatihan keamanan digital:</strong> Buku ini memberikan panduan praktis tentang cara melindungi diri di dunia maya, serta pentingnya keamanan digital di era modern.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 3 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/vzps/files/shot.jpg" alt="Peran dan hak perempuan di ruang digital" onclick="showDescription('deskripsiBuku3')">
+            <div id="deskripsiBuku3" class="description">
+                <p><strong>Peran dan hak perempuan di ruang digital:</strong> Buku ini mengeksplorasi hak-hak perempuan dalam dunia digital dan bagaimana teknologi bisa menjadi alat pemberdayaan.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 4 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/drwl/files/shot.jpg" alt="Pemikiran utama seri diskusi kecerdasan buatan" onclick="showDescription('deskripsiBuku4')">
+            <div id="deskripsiBuku4" class="description">
+                <p><strong>Pemikiran utama seri diskusi kecerdasan buatan:</strong> Buku ini mengulas berbagai topik penting dalam kecerdasan buatan, serta dampaknya terhadap masyarakat dan industri.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 5 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/aoek/files/shot.jpg" alt="Dari anak muda untuk Indonesia makin cakep digital" onclick="showDescription('deskripsiBuku5')">
+            <div id="deskripsiBuku5" class="description">
+                <p><strong>Dari anak muda untuk Indonesia makin cakep digital:</strong> Buku ini menginspirasi generasi muda untuk memanfaatkan teknologi demi kemajuan bangsa dan masyarakat.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 6 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/jejk/files/shot.jpg" alt="KBGO dan pelecehan seksual daring di tempat kerja" onclick="showDescription('deskripsiBuku6')">
+            <div id="deskripsiBuku6" class="description">
+                <p><strong>KBGO dan pelecehan seksual daring di tempat kerja:</strong> Buku ini mengulas topik penting mengenai pelecehan seksual secara daring dan cara-cara untuk menghadapinya di tempat kerja.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 7 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/oivl/files/shot.jpg" alt="Indonesian Civil Society Position Paper Three Main Challenges of Indonesia's Digital Transformation" onclick="showDescription('deskripsiBuku7')">
+            <div id="deskripsiBuku7" class="description">
+                <p><strong>Indonesian Civil Society Position Paper Three Main Challenges of Indonesia's Digital Transformation:</strong> Buku ini memberikan analisis mendalam tentang tantangan yang dihadapi Indonesia dalam transformasi digital.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 8 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/mmqv/files/shot.jpg" alt="Kertas posisi masyarakat sipil tiga tantangan utama transformasi digital Indonesia" onclick="showDescription('deskripsiBuku8')">
+            <div id="deskripsiBuku8" class="description">
+                <p><strong>Kertas posisi masyarakat sipil tiga tantangan utama transformasi digital Indonesia:</strong> Buku ini menyoroti perspektif masyarakat sipil terhadap tantangan digitalisasi yang dihadapi oleh Indonesia.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 9 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/mxzw/files/shot.jpg" alt="The Unspoken Facts: Significant Challenges of Indonesian Women in Digital Issues" onclick="showDescription('deskripsiBuku9')">
+            <div id="deskripsiBuku9" class="description">
+                <p><strong>The Unspoken Facts: Significant Challenges of Indonesian Women in Digital Issues:</strong> Buku ini mengungkap tantangan-tantangan besar yang dihadapi perempuan Indonesia di dunia digital.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 10 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/dehh/files/shot.jpg" alt="Fakta yang Tak Terucapkan: Tantangan Signifikan Perempuan Indonesia dalam Isu Digital" onclick="showDescription('deskripsiBuku10')">
+            <div id="deskripsiBuku10" class="description">
+                <p><strong>Fakta yang Tak Terucapkan: Tantangan Signifikan Perempuan Indonesia dalam Isu Digital:</strong> Buku ini menggali lebih dalam tantangan yang belum banyak dibicarakan mengenai perempuan di dunia digital Indonesia.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 11 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/volu/files/shot.jpg" alt="Digital aman-aman bergerak" onclick="showDescription('deskripsiBuku11')">
+            <div id="deskripsiBuku11" class="description">
+                <p><strong>Digital aman-aman bergerak:</strong> Buku ini memberikan tips dan cara-cara untuk bergerak di dunia digital dengan aman dan penuh kehati-hatian.</p>
+            </div>
+        </div>
+
+        <!-- Book Item 12 -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/pxdc/files/shot.jpg" alt="Kreasi asyik edukasi digital untuk anak" onclick="showDescription('deskripsiBuku12')">
+            <div id="deskripsiBuku12" class="description">
+                <p><strong>Kreasi asyik edukasi digital untuk anak:</strong> Buku ini membahas cara-cara kreatif untuk memberikan edukasi digital kepada anak-anak dengan cara yang menyenangkan dan aman.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to toggle the description visibility
+        function showDescription(id) {
+            var description = document.getElementById(id);
+            // Toggle visibility of the description
+            description.style.display = description.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
