@@ -4,185 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Stevanus Ketaren</title>
-    <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://media.istockphoto.com/id/1469958688/id/foto/dinding-bata-biru-ungu-latar-belakang-gaya-cyberpunk-warna-futuristik-desain-kreatif-modern.jpg?s=1024x1024&w=is&k=20&c=T7X32it6Gj-j2QoNvsoW3QPCP6Lm6CF6x2iLm-I2iIA=');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-        }
-
-        .navbar {
-            margin-bottom: 0;
-        }
-
-        .mainmenubtn {
-            background-color: skyblue;
-            color: white;
-            border: none;
-            cursor: pointer;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 4px;
-        }
-
-        .mainmenubtn:hover {
-            background-color: blue;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin: 10px;
-        }
-
-        .dropdown-content {
-            display: none;
-            background-color: skyblue;
-            min-width: 200px;
-            position: absolute;
-            z-index: 1;
-            border-radius: 4px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-child a {
-            color: blue;
-            padding: 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-child a:hover {
-            background-color: #f1f1f1;
-        }
-
-        /* Styling for the menu */
-        .menu li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        .menu a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .menu a:hover {
-            color: skyblue;
-        }
-
-        .container {
-            margin-top: 20px;
-        }
-
-        .row {
-            margin-top: 20px;
-        }
-
-        .column {
-            padding: 10px;
-        }
-
-        /* Styling the main header */
-        .header {
-            padding: 50px;
-        }
-
-        .header h1 {
-            font-size: 40px;
-        }
+        /* Paste the CSS code here */
     </style>
 </head>
+
+    
 <body>
-
-    <!-- Navbar with Dropdown Menu -->
-    <div class="header">
-        <h1>Selamat Datang di Perpustakaan Stevanus Ketaren</h1>
-        <p>Temukan berbagai modul dan materi pembelajaran di sini.</p>
+<!-- Main Dropdown Menu -->
+<div class="dropdown">
+    <button class="mainmenubtn">Dropdown Menu</button>
+    <div class="dropdown-content">
+        <ul>
+            <li>
+                <a href="#">Sub Menu 1</a>
+                <ul> 
+                    <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan</a></li>
+                    <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
+                    <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Sub Menu 2</a>
+                <ul> 
+                    <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan</a></li>
+                    <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
+                    <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
+                </ul>
+            </li> 
+            <!-- Tambahkan sub-menu lainnya di sini -->
+        </ul>
     </div>
+</div>
 
-    <!-- Main Dropdown Menu -->
-    <div class="dropdown">
-        <button class="mainmenubtn">Dropdown Menu</button>
-        <div class="dropdown-content">
-            <ul>
-                <li>
-                    <a href="#">Sub Menu 1</a>
-                    <ul> 
-                        <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan </a></li>
-                        <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
-                        <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
-                    </ul>
-               </li>
-                <li>
-                    <a href="#">Sub Menu 2</a>
-                    <ul> 
-                        <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan </a></li>
-                        <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
-                        <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
-                    </ul>
-               </li> 
-                <li>
-                    <a href="#">Sub Menu 3</a>
-                    <ul> 
-                        <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan </a></li>
-                        <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
-                        <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
-                    </ul>
-               </li> 
-                <li>
-                    <a href="#">Sub Menu 4</a>
-                    <ul> 
-                        <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan </a></li>
-                        <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
-                        <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Sub Menu 5</a>
-                    <ul> 
-                        <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan </a></li>
-                        <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
-                        <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Sub Menu 6</a>
-                    <ul> 
-                        <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan </a></li>
-                        <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
-                        <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
-                    </ul>
-                </li> 
-                <li>
-                    <a href="#">Sub Menu 7</a>
-                    <ul> 
-                        <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan </a></li>
-                        <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
-                        <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
-                    </ul>
-               </li>
-                <li>
-                    <a href="#">Sub Menu 8</a>
-                    <ul> 
-                        <li><a href="Fformulir Pemesanan Buku.html">Program Studi Perpustakaan </a></li>
-                        <li><a href="Formulir Pemesanan Buku.html">Form Pemesanan Buku</a></li>
-                        <li><a href="Perpanjangan Peminjaman Buku.html">Form Perpanjangan Peminjaman BukuL</a></li>
-                    </ul>
-               </li>
-            </ul>
-        </div>
-    </div>
 
     
 
