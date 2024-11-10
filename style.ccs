@@ -1,5 +1,6 @@
+/* Gaya dasar untuk menu navigasi */
 nav ul {
-    background: #8A2BE2; /* Mengubah warna latar belakang menjadi #8A2BE2 */
+    background: #8A2BE2;
     padding: 0;
     list-style: none;
     position: relative;
@@ -7,18 +8,20 @@ nav ul {
     font-family: 'Helvetica', Arial, sans-serif;
 }
 
+/* Menghapus style dari elemen yang berada di dalam menu */
 nav ul:after {
     content: "";
     clear: both;
     display: block;
 }
 
+/* Gaya untuk menu utama */
 nav ul li {
-    float: left;
+    display: inline-block; /* Gunakan inline-block agar menu ditampilkan secara horizontal */
 }
 
 nav ul li:hover {
-    background-color: #7B1FA2; /* Menyesuaikan warna latar belakang saat hover */
+    background-color: #7B1FA2;
 }
 
 nav ul li a {
@@ -28,29 +31,34 @@ nav ul li a {
     color: #fff;
 }
 
+/* Gaya untuk item saat hover atau fokus */
 nav ul li a:hover,
 nav ul li a:focus {
     color: #fff;
-    background: #7B1FA2; /* Mengubah latar belakang saat fokus dan hover */
+    background: #7B1FA2;
 }
 
+/* Dropdown pertama: Menyembunyikan dropdown */
 nav ul ul {
     display: none;
-    background: #8A2BE2; /* Menjaga konsistensi warna dropdown */
+    background: #8A2BE2;
     padding: 0;
     position: absolute;
     top: 100%;
+    left: 0;
     max-width: 300px;
     width: auto;
 }
 
+/* Gaya untuk item submenu */
 nav ul ul li {
-    float: none;
+    display: block;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
+/* Menampilkan dropdown saat item induk dihover */
 nav ul li:hover > ul,
-nav ul li:focus-within > ul { /* Menampilkan dropdown saat fokus pada item induk */
+nav ul li:focus-within > ul {
     display: block;
 }
 
@@ -59,11 +67,13 @@ nav ul ul li a {
     color: #fff;
 }
 
+/* Hover pada item submenu */
 nav ul ul li a:hover,
 nav ul ul li a:focus {
-    background: #7B1FA2; /* Mengubah latar belakang saat hover pada submenu */
+    background: #7B1FA2;
 }
 
+/* Dropdown kedua (submenu di dalam submenu) */
 nav ul ul ul {
     position: absolute;
     left: 100%;
@@ -71,12 +81,16 @@ nav ul ul ul {
     width: 200px;
 }
 
-/* Responsivitas */
+/* Responsivitas: Membuat menu lebih ramah mobile */
 @media (max-width: 768px) {
     nav ul {
-        display: block; /* Mengubah menu menjadi blok di perangkat kecil */
+        display: block; /* Menjadikan menu sebagai blok */
     }
     nav ul li {
-        float: none; /* Menghapus float pada item menu */
+        display: block; /* Menjadikan item menu tampil secara vertikal */
+    }
+    nav ul ul {
+        position: static; /* Menjadikan dropdown tampil normal di mobile */
+        max-width: 100%; /* Menyesuaikan ukuran dropdown */
     }
 }
