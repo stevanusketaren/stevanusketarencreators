@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -26,13 +27,17 @@
             margin-top: 20px;
             border-radius: 4px;
         }
+
         .mainmenubtn:hover {
             background-color: blue;
         }
+
         .dropdown {
             position: relative;
             display: inline-block;
+            margin: 10px;
         }
+
         .dropdown-content {
             display: none;
             background-color: skyblue;
@@ -41,27 +46,47 @@
             z-index: 1;
             border-radius: 4px;
         }
+
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
         .dropdown-child a {
             color: blue;
             padding: 20px;
             text-decoration: none;
             display: block;
         }
+
         .dropdown-child a:hover {
             background-color: #f1f1f1;
         }
+
         .container {
             margin-top: 20px;
         }
-        /* For layout of columns */
+
         .row {
             margin-top: 20px;
         }
+
         .column {
             padding: 10px;
+        }
+
+        /* Styling for the menu */
+        .menu li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            color: skyblue;
         }
     </style>
 </head>
@@ -73,7 +98,7 @@
         <div class="dropdown-content">
             <ul>
                 <li><a href="modul5.html">Sub Menu 1.1</a></li>
-                <li><a href="mudul 5 .html">Sub Menu 1.2</a></li>
+                <li><a href="modul5.html">Sub Menu 1.2</a></li>
                 <li><a href="#">Sub Menu 1.3</a></li>
                 <li><a href="#">Sub Menu 1.4</a></li>
                 <li><a href="#">Sub Menu 1.5</a></li>
@@ -100,64 +125,69 @@
         </div>
     </div>
 
+    <!-- Menu Listing -->
     <ul class="menu">
-    <li class="dropdown">
-        <a href="#">Modul 1</a>
-        <ul>
-            <li><a href="#">Topik 1.1</a></li>
-            <li><a href="#">Topik 1.2</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#">Modul 2</a>
-        <ul>
-            <li><a href="#">Topik 2.1</a></li>
-            <li><a href="#">Topik 2.2</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#">Modul 3</a>
-        <ul>
-            <li><a href="#">Topik 3.1</a></li>
-            <li><a href="#">Topik 3.2</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#">Modul 4</a>
-        <ul>
-            <li><a href="#">Topik 4.1</a></li>
-            <li><a href="#">Topik 4.2</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#">Modul 5</a>
-        <ul>
-            <li><a href="#">Topik 5.1</a></li>
-            <li><a href="#">Topik 5.2</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#">Modul 6</a>
-        <ul>
-            <li><a href="#">Topik 6.1</a></li>
-            <li><a href="#">Topik 6.2</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#">Modul 7</a>
-        <ul>
-            <li><a href="#">Topik 7.1</a></li>
-            <li><a href="#">Topik 7.2</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#">Modul 8</a>
-        <ul>
-            <li><a href="#">Topik 8.1</a></li>
-            <li><a href="#">Topik 8.2</a></li>
-        </ul>
-    </li>
-</ul>
+        <li class="dropdown">
+            <a href="#">Modul 1</a>
+            <ul>
+                <li><a href="#">Topik 1.1</a></li>
+                <li><a href="#">Topik 1.2</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Modul 2</a>
+            <ul>
+                <li><a href="#">Topik 2.1</a></li>
+                <li><a href="#">Topik 2.2</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Modul 3</a>
+            <ul>
+                <li><a href="#">Topik 3.1</a></li>
+                <li><a href="#">Topik 3.2</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Modul 4</a>
+            <ul>
+                <li><a href="#">Topik 4.1</a></li>
+                <li><a href="#">Topik 4.2</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Modul 5</a>
+            <ul>
+                <li><a href="#">Topik 5.1</a></li>
+                <li><a href="#">Topik 5.2</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Modul 6</a>
+            <ul>
+                <li><a href="#">Topik 6.1</a></li>
+                <li><a href="#">Topik 6.2</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Modul 7</a>
+            <ul>
+                <li><a href="#">Topik 7.1</a></li>
+                <li><a href="#">Topik 7.2</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Modul 8</a>
+            <ul>
+                <li><a href="#">Topik 8.1</a></li>
+                <li><a href="#">Topik 8.2</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
    
 
