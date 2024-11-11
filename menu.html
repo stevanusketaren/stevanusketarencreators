@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Navigasi Responsif</title>
+    <style>
+        /* style.css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling untuk Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Memastikan logo di kiri, dan menu navigasi di kanan */
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .navbar .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px; /* Memberikan jarak antara item menu */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #04aa6d;
+        }
+
+        /* Style untuk menu icon (hamburger) */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+        }
+
+        /* Responsif: Mengubah tampilan navbar di perangkat kecil */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Memberikan bayangan pada menu */
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+                text-align: left; /* Menjajarkan item ke kiri */
+                width: 100%; /* Membuat item menu mengisi lebar layar */
+            }
+
+            .menu-icon {
+                display: block; /* Menampilkan ikon hamburger pada perangkat mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="menu-icon" id="menu-icon">
+                <span>&#9776;</span> <!-- Tanda menu hamburger -->
+            </div>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h1>Selamat Datang di Website Kami</h1>
+    </section>
+    <section id="about">
+        <h1>Tentang Kami</h1>
+    </section>
+    <section id="services">
+        <h1>Layanan Kami</h1>
+    </section>
+    <section id="contact">
+        <h1>Kontak Kami</h1>
+    </section>
+
+    <script>
+        // script.js
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>
