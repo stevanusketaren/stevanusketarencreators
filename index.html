@@ -1,4 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="navbar" id="navbar-links">
+  <a href="#home">Home</a>
+  <div class="subnav">
+    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#company">Company</a>
+      <a href="#team">Team</a>
+      <a href="#careers">Careers</a>
+    </div>
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#bring">Bring</a>
+      <a href="#deliver">Deliver</a>
+      <a href="#package">Package</a>
+      <a href="#express">Express</a>
+    </div>
+  </div> 
+  <div class="subnav">
+    <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#link1">Link 1</a>
+      <div class="sub-subnav">
+        <a href="#link1-sub1">Submenu 1</a>
+        <a href="#link1-sub2">Submenu 2</a>
+        <a href="#link1-sub3">Submenu 3</a>
+      </div>
+      <a href="#link2">Link 2</a>
+      <div class="sub-subnav">
+        <a href="#link2-sub1">Submenu 1</a>
+        <a href="#link2-sub2">Submenu 2</a>
+        <a href="#link2-sub3">Submenu 3</a>
+      </div>
+      <a href="#link3">Link 3</a>
+      <div class="sub-subnav">
+        <a href="#link3-sub1">Submenu 1</a>
+        <a href="#link3-sub2">Submenu 2</a>
+        <a href="#link3-sub3">Submenu 3</a>
+      </div>
+      <a href="#link4">Link 4</a>
+      <div class="sub-subnav">
+        <a href="#link4-sub1">Submenu 1</a>
+        <a href="#link4-sub2">Submenu 2</a>
+        <a href="#link4-sub3">Submenu 3</a>
+      </div>
+    </div>
+  </div>
+  <a href="#contact">Contact</a>
+  <!-- Hamburger Menu Icon -->
+  <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div style="padding:0 16px">
+  <h3>Subnav/dropdown menu inside a Navigation Bar</h3>
+  <p>Hover over the "About", "Services", "Partners", or "Links" to see the sub navigation menu.</p>
+</div>
+
+<script>
+  // Toggle function to show/hide the navbar in mobile view
+  function toggleMenu() {
+    var x = document.getElementById("navbar-links");
+    if (x.className === "navbar") {
+      x.className += " responsive";
+    } else {
+      x.className = "navbar";
+    }
+  }
+</script>
+
+</body>
+</html>
+
