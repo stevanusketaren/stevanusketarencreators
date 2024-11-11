@@ -3,26 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pameran Buku</title>
+    <title>Perpustakaan Online & Pameran Buku</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
         }
         h1 {
             text-align: center;
-            margin-top: 20px;
+            color: #333;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .book-list, .gallery {
+            margin-top: 30px;
+        }
+        .book-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+        .alert {
+            color: red;
+            font-weight: bold;
+        }
+        .info {
+            color: green;
+        }
+        label {
+            font-size: 16px;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 14px;
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
         }
         .gallery {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .book-item {
-            position: relative;
-            width: 200px;
-            text-align: center;
         }
         .book-item img {
             width: 100%;
@@ -42,16 +79,109 @@
             text-align: center;
             margin-top: 5px;
         }
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .book-item {
+                padding: 8px;
+            }
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+            input, button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Pameran Buku</h1>
+    <h1>Selamat datang di Perpustakaan Online & Pameran Buku</h1>
 
+    <!-- Perpustakaan Online -->
+    <div id="book-list" class="book-list">
+        <h2>Daftar Buku - Perpustakaan Online:</h2>
+        <!-- Daftar buku akan ditampilkan di sini -->
+    </div>
+
+    <div>
+        <label for="bookCount">Masukkan jumlah buku yang ingin dipinjam:</label>
+        <input type="number" id="bookCount" min="1" max="10" aria-label="Jumlah buku yang ingin dipinjam">
+        <button onclick="borrowBooks()" aria-label="Pinjam Buku">Pinjam Buku</button>
+    </div>
+
+    <div id="message" class="alert"></div>
+
+    <script>
+        // 1. Daftar Buku
+        let books = [
+            { title: "Pemrograman Web", author: "John Doe", available: true },
+            { title: "Algoritma Dasar", author: "Jane Smith", available: true },
+            { title: "Pemrograman Python", author: "Mark Lee", available: false },
+            { title: "Database Modern", author: "Sara Ali", available: true },
+            { title: "Sistem Operasi", author: "David Kim", available: false }
+        ];
+
+        // 2. Menampilkan Daftar Buku
+        function displayBooks() {
+            const bookListDiv = document.getElementById("book-list");
+            bookListDiv.innerHTML = "<h2>Daftar Buku:</h2>";
+            for (let i = 0; i < books.length; i++) {
+                let book = books[i];
+                let bookItem = document.createElement("div");
+                bookItem.classList.add("book-item");
+
+                bookItem.innerHTML = `<strong>${book.title}</strong> oleh ${book.author} - ${book.available ? 'Tersedia' : 'Tidak Tersedia'}`;
+                bookListDiv.appendChild(bookItem);
+            }
+        }
+
+        // 3. Fungsi untuk Meminjam Buku
+        function borrowBooks() {
+            const bookCount = parseInt(document.getElementById("bookCount").value);
+            const messageDiv = document.getElementById("message");
+
+            if (isNaN(bookCount) || bookCount < 1) {
+                messageDiv.textContent = "Harap masukkan jumlah buku yang valid!";
+                return;
+            }
+
+            if (bookCount > books.length) {
+                messageDiv.textContent = `Hanya ada ${books.length} buku yang tersedia.`;
+                return;
+            }
+
+            let booksToBorrow = [];
+            for (let i = 0; i < books.length; i++) {
+                if (books[i].available && booksToBorrow.length < bookCount) {
+                    booksToBorrow.push(books[i].title);
+                    books[i].available = false;
+                }
+            }
+
+            if (booksToBorrow.length > 0) {
+                messageDiv.classList.remove("alert");
+                messageDiv.classList.add("info");
+                messageDiv.textContent = `Anda berhasil meminjam buku: ${booksToBorrow.join(", ")}.`;
+            } else {
+                messageDiv.classList.remove("info");
+                messageDiv.classList.add("alert");
+                messageDiv.textContent = "Tidak ada buku yang tersedia untuk dipinjam.";
+            }
+
+            displayBooks();
+        }
+
+        window.onload = displayBooks;
+    </script>
+
+    <!-- Pameran Buku -->
     <div class="gallery">
+        <h2>Pameran Buku:</h2>
+
         <!-- Book Item 1 -->
         <div class="book-item">
-            <img src="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" alt="Diskusi publik perempuan dan teknologi" onclick="showDescription('deskripsiBuku1')">
+            <img src="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" alt="Diskusi publik perempuan dan teknologi" aria-label="Diskusi publik perempuan dan teknologi" onclick="showDescription('deskripsiBuku1')">
             <div id="deskripsiBuku1" class="description">
                 <p><strong>Diskusi publik perempuan dan teknologi:</strong> Buku ini membahas peran perempuan dalam dunia teknologi dan pentingnya partisipasi mereka dalam berbagai aspek digital.</p>
             </div>
@@ -89,7 +219,7 @@
             </div>
         </div>
 
-        <!-- Book Item 6 -->
+               <!-- Book Item 6 -->
         <div class="book-item">
             <img src="https://online.fliphtml5.com/rmpye/jejk/files/shot.jpg" alt="KBGO dan pelecehan seksual daring di tempat kerja" onclick="showDescription('deskripsiBuku6')">
             <div id="deskripsiBuku6" class="description">
@@ -158,3 +288,5 @@
 
 </body>
 </html>
+
+
