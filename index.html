@@ -1,13 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="menu.html">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
 </head>
 <body>
 
-<div class="navbar" id="navbar-links">
+<div class="navbar">
   <a href="#home">Home</a>
   <div class="subnav">
     <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
@@ -30,55 +93,18 @@
     <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
       <a href="#link1">Link 1</a>
-      <div class="sub-subnav">
-        <a href="#link1-sub1">Submenu 1</a>
-        <a href="#link1-sub2">Submenu 2</a>
-        <a href="#link1-sub3">Submenu 3</a>
-      </div>
       <a href="#link2">Link 2</a>
-      <div class="sub-subnav">
-        <a href="#link2-sub1">Submenu 1</a>
-        <a href="#link2-sub2">Submenu 2</a>
-        <a href="#link2-sub3">Submenu 3</a>
-      </div>
       <a href="#link3">Link 3</a>
-      <div class="sub-subnav">
-        <a href="#link3-sub1">Submenu 1</a>
-        <a href="#link3-sub2">Submenu 2</a>
-        <a href="#link3-sub3">Submenu 3</a>
-      </div>
       <a href="#link4">Link 4</a>
-      <div class="sub-subnav">
-        <a href="#link4-sub1">Submenu 1</a>
-        <a href="#link4-sub2">Submenu 2</a>
-        <a href="#link4-sub3">Submenu 3</a>
-      </div>
     </div>
   </div>
   <a href="#contact">Contact</a>
-  <!-- Hamburger Menu Icon -->
-  <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-    <i class="fa fa-bars"></i>
-  </a>
 </div>
 
 <div style="padding:0 16px">
   <h3>Subnav/dropdown menu inside a Navigation Bar</h3>
-  <p>Hover over the "About", "Services", "Partners", or "Links" to see the sub navigation menu.</p>
+  <p>Hover over the "about", "services" or "partners" link to see the sub navigation menu.</p>
 </div>
-
-<script>
-  // Toggle function to show/hide the navbar in mobile view
-  function toggleMenu() {
-    var x = document.getElementById("navbar-links");
-    if (x.className === "navbar") {
-      x.className += " responsive";
-    } else {
-      x.className = "navbar";
-    }
-  }
-</script>
 
 </body>
 </html>
-
