@@ -3,150 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sejarah Universitas Katolik Parahyangan</title>
+    <title>Navbar Perpustakaan</title>
+    
+    <!-- Link to FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <style>
+        /* General styles for navbar */
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             background-color: #f4f4f4;
             color: #333;
         }
-
-        h1 {
-            text-align: center;
-            color: #2C3E50;
-        }
-
-        p {
-            text-align: justify;
-            margin-bottom: 15px;
-        }
-
-        .section-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #34495E;
-            margin-top: 20px;
-        }
-
+        
         .navbar {
-            overflow: hidden;
+            display: flex;
+            justify-content: space-between;  /* Space out logo and menu */
+            align-items: center;  /* Vertically align items */
             background-color: #333;
-            padding: 10px;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 100;
         }
 
         .navbar img {
-            float: left;
-            height: 40px;
-            margin-right: 20px;
+            height: 40px; /* Adjust the logo size */
         }
 
-        .navbar a {
-            float: left;
-            font-size: 16px;
+        /* Container for menu items */
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a, .subnavbtn {
             color: white;
-            text-align: center;
-            padding: 14px 16px;
+            padding: 14px 20px;
             text-decoration: none;
-        }
-
-        .subnav {
-            float: left;
-            overflow: hidden;
-        }
-
-        .subnav .subnavbtn {
             font-size: 16px;
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
         }
 
-        .navbar a:hover, .subnav:hover .subnavbtn {
-            background-color: blue;
+        .navbar a:hover, .subnavbtn:hover {
+            background-color: #575757;
+        }
+
+        /* Subnav dropdown styles */
+        .subnav {
+            position: relative;
+            display: inline-block;
         }
 
         .subnav-content {
             display: none;
             position: absolute;
-            left: 0;
-            background-color: blue;
-            width: 100%;
+            background-color: #333;
+            min-width: 160px;
             z-index: 1;
+            top: 100%;
+            left: 0;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .subnav-content a {
-            float: left;
             color: white;
+            padding: 12px 16px;
             text-decoration: none;
+            display: block;
         }
 
         .subnav-content a:hover {
-            background-color: #eee;
-            color: black;
+            background-color: #575757;
         }
 
+        /* Show dropdown content when hovering over the subnav */
         .subnav:hover .subnav-content {
             display: block;
         }
 
-        /* Bootstrap Dropdown styles */
-        .dropdown-menu a {
-            color: #333;
-            padding: 8px 16px;
+        /* Responsive Design: Collapsible Menu for Small Screens */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .navbar-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .navbar a, .subnavbtn {
+                width: 100%;
+                text-align: left;
+                padding: 12px 20px;
+            }
+            
+            .subnav-content {
+                position: static;
+                display: none;
+                width: 100%;
+            }
+
+            .subnav:hover .subnav-content {
+                display: block;
+            }
         }
     </style>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
 <!-- Navbar -->
 <div class="navbar">
+    <!-- Logo -->
     <img src="https://library.unpar.ac.id/images/default/logo.png" alt="Library Logo">
-    <a href="#home">Home</a>
-    <div class="subnav">
-        <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-            <a href="#company">Company</a>
-            <a href="#team">Team</a>
-            <a href="#careers">Careers</a>
-        </div>
-    </div>
-    <div class="subnav">
-        <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-            <a href="modul1.html">Bring</a>
-            <a href="#deliver">Deliver</a>
-            <a href="#package">Package</a>
-            <a href="#express">Express</a>
-        </div>
-    </div>
-    <div class="subnav">
-        <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-            <a href="#link1">Link 1</a>
-            <a href="#link2">Link 2</a>
-            <a href="#link3">Link 3</a>
-            <a href="#link4">Link 4</a>
-            <a href="modul5.html">modul 5</a>
-            <a href="modul6.html">modul 6</a>
-            <a href="#link7">Link 7</a>
-            <a href="modul2.html">Link 8</a>
-        </div>
-    </div>
-    <a href="#contact">Contact</a>
-</div>
 
+    <!-- Menu items container -->
+    <div class="navbar-menu">
+        <!-- Menu links -->
+        <a href="#home">Home</a>
+
+        <!-- About Dropdown -->
+        <div class="subnav">
+            <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="#company">Company</a>
+                <a href="#team">Team</a>
+                <a href="#careers">Careers</a>
+            </div>
+        </div>
+
+        <!-- Services Dropdown -->
+        <div class="subnav">
+            <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="modul1.html">Bring</a>
+                <a href="#deliver">Deliver</a>
+                <a href="#package">Package</a>
+                <a href="#express">Express</a>
+            </div>
+        </div>
+
+        <!-- Partners Dropdown -->
+        <div class="subnav">
+            <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="#link1">Link 1</a>
+                <a href="#link2">Link 2</a>
+                <a href="#link3">Link 3</a>
+                <a href="#link4">Link 4</a>
+                <a href="modul5.html">modul 5</a>
+                <a href="modul6.html">modul 6</a>
+                <a href="#link7">Link 7</a>
+                <a href="modul2.html">Link 8</a>
+            </div>
+        </div>
+
+        <!-- Contact Link -->
+        <a href="#contact">Contact</a>
+    </div>
+</div>
 <!-- Page Content -->
 <div style="padding:0 16px">
     <h1>Sejarah Universitas Katolik Parahyangan</h1>
