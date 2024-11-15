@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital & Pameran Buku</title>
+
+    <!-- Menyertakan jQuery dan jQuery UI (untuk Datepicker) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- CSS untuk Desain Halaman -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .book-list, .gallery {
+            margin-top: 30px;
+        }
+        .book-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+        .alert {
+            color: red;
+            font-weight: bold;
+        }
+        .info {
+            color: green;
+        }
+        label {
+            font-size: 16px;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 14px;
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .book-item img {
+            width: 100%;
+            cursor: pointer;
+        }
+        .description {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .book-item {
+                padding: 8px;
+            }
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+            input, button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Selamat datang di Perpustakaan Digital & Pameran Buku</h1>
+
+    <!-- Perpustakaan Digital -->
+    <div id="book-list" class="book-list">
+        <h2>Daftar Buku - Perpustakaan Digital:</h2>
+        <!-- Daftar buku akan ditampilkan di sini -->
+    </div>
+
+    <div>
+        <label for="bookCount">Masukkan jumlah buku yang ingin dipinjam:</label>
+        <input type="number" id="bookCount" min="1" max="10" aria-label="Jumlah buku yang ingin dipinjam">
+        <button onclick="borrowBooks()" aria-label="Pinjam Buku">Pinjam Buku</button>
+    </div>
+
+    <div id="message" class="alert"></div>
+
+    <!-- Form untuk Menambahkan Buku Baru -->
+    <div id="add-book-form">
+        <h3>Tambah Buku Baru</h3>
+        <input type="text" id="book-title" placeholder="Judul Buku" />
+        <label for="publish-date">Tanggal Penerbitan:</label>
+        <input type="text" id="publish-date" />
+        <button class="button" id="add-book">Tambah Buku</button>
+    </div>
+
+    <!-- Pameran Buku -->
+    <div class="gallery">
+        <h2>Pameran Buku:</h2>
+        <!-- Add your book images here -->
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" alt="Diskusi publik perempuan dan teknologi" onclick="showDescription('deskripsiBuku1')">
+            <div id="deskripsiBuku1" class="description">
+                <p><strong>Diskusi publik perempuan dan teknologi:</strong> Buku ini membahas peran perempuan dalam dunia teknologi dan pentingnya partisipasi mereka dalam berbagai aspek digital.</p>
+            </div>
+        </div>
+        <div class="book-item">
+            <img src="https://online.fliphtml5.com/rmpye/azxz/files/shot.jpg" alt="Pelatihan keamanan digital" onclick="showDescription('deskripsiBuku2')">
+            <div id="deskripsiBuku2" class="description">
+                <p><strong>Pelatihan keamanan digital:</strong> Buku ini memberikan panduan praktis tentang cara melindungi diri di dunia maya, serta pentingnya keamanan digital di era modern.</p>
+            </div>
+        </div>
+        <!-- Add more books as needed -->
+    </div>
+
+    <script>
+        // Data buku yang tersedia
+        let books = [
+            { title: "Pemrograman Web", author: "John Doe", available: true },
+            { title: "Algoritma Dasar", author: "Jane Smith", available: true },
+            { title: "Pemrograman Python", author: "Mark Lee", available: false },
+            { title: "Database Modern", author: "Sara Ali", available: true },
+            { title: "Sistem Operasi", author: "David Kim", available: false }
+        ];
+
+        // Menampilkan daftar buku
+        function displayBooks() {
+            const bookListDiv = document.getElementById("book-list");
+            bookListDiv.innerHTML = "<h2>Daftar Buku:</h2>";
+            books.forEach((book) => {
+                let bookItem = document.createElement("div");
+                bookItem.classList.add("book-item");
+                bookItem.innerHTML = `<strong>${book.title}</strong> oleh ${book.author} - ${book.available ? 'Tersedia' : 'Tidak Tersedia'}`;
+                bookListDiv.appendChild(bookItem);
+            });
+        }
+
+        // Fungsi untuk meminjam buku
+        function borrowBooks() {
+            const bookCount = parseInt(document.getElementById("bookCount").value);
+            const messageDiv = document.getElementById("message");
+
+            if (isNaN(bookCount) || bookCount < 1) {
+                messageDiv.textContent = "Harap masukkan jumlah buku yang valid!";
+                return;
+            }
+
+            if (bookCount > books.length) {
+                messageDiv.textContent = `Hanya ada ${books.length} buku yang tersedia.`;
+                return;
+            }
+
+            let booksToBorrow = [];
+            for (let i = 0; i < books.length; i++) {
+                if (books[i].available && booksToBorrow.length < bookCount) {
+                    booksToBorrow.push(books[i].title);
+                    books[i].available = false;
+                }
+            }
+
+            if (booksToBorrow.length > 0) {
+                messageDiv.classList.remove("alert");
+                messageDiv.classList.add("info");
+                messageDiv.textContent = `Anda berhasil meminjam buku: ${booksToBorrow.join(", ")}.`;
+            } else {
+                messageDiv.classList.remove("info");
+                messageDiv.classList.add("alert");
+                messageDiv.textContent = "Tidak ada buku yang tersedia untuk dipinjam.";
+            }
+
+            displayBooks();
+        }
+
+        // Menambahkan buku baru ke dalam daftar
+        $('#add-book').click(function() {
+            var bookTitle = $('#book-title').val();
+            var publishDate = $('#publish-date').val();
+
+            if (bookTitle && publishDate) {
+                books.push({ title: bookTitle, author: "Tidak Diketahui", available: true });
+                $('#book-list').append('<div class="book-item"><strong>' + bookTitle + '</strong> oleh Tidak Diketahui - Tersedia</div>');
+                $('#book-title').val('');
+                $('#publish-date').val('');
+            } else {
+                alert('Judul buku dan tanggal penerbitan tidak boleh kosong!');
+            }
+        });
+
+        // Mengaktifkan Datepicker pada input tanggal
+        $('#publish-date').datepicker();
+
+        // Menampilkan Daftar Buku ketika halaman dimuat
+        window.onload = displayBooks;
+
+        // Fungsi untuk menampilkan deskripsi buku pada pameran
+        function showDescription(id) {
+            var description = document
 
