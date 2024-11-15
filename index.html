@@ -1,145 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  padding: 10px;
-}
-
-.navbar img {
-  float: left;
-  height: 40px; /* Adjust the height to fit the navbar */
-  margin-right: 20px; /* Add some spacing between the logo and the menu items */
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.subnav {
-  float: left;
-  overflow: hidden;
-}
-
-.subnav .subnavbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover, .subnav:hover .subnavbtn {
-  background-color: blue;
-}
-
-.subnav-content {
-  display: none;
-  position: absolute;
-  left: 0;
-  background-color: blue;
-  width: 100%;
-  z-index: 1;
-}
-
-.subnav-content a {
-  float: left;
-  color: white;
-  text-decoration: none;
-}
-
-.subnav-content a:hover {
-  background-color: #eee;
-  color: black;
-}
-
-.subnav:hover .subnav-content {
-  display: block;
-}
-</style>
-</head>
-<body>
-
-<div class="navbar">
-  <!-- Add logo image here -->
-  <img src="https://library.unpar.ac.id/images/default/logo.png" alt="Library Logo">
-  
-  <a href="#home">Home</a>
-  <div class="subnav">
-    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="#company">Company</a>
-      <a href="#team">Team</a>
-      <a href="#careers">Careers</a>
-    </div>
-  </div>
-  <div class="subnav">
-    <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="modul1.html">Bring</a>
-      <a href="#deliver">Deliver</a>
-      <a href="#package">Package</a>
-      <a href="#express">Express</a>
-    </div>
-  </div> 
-  <div class="subnav">
-    <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="#link1">Link 1</a>
-      <a href="#link2">Link 2</a>
-      <a href="#link3">Link 3</a>
-      <a href="#link4">Link 4</a>
-      <a href="modul5.html">modul 5</a> 
-      <a href="modul6.html">modul 6</a> 
-      <a href="#link4">Link 7</a>
-      <a href="modul2.html">Link 8</a>
-    </div>
-  </div>
-  <a href="#contact">Contact</a>
-</div>
-
-<div style="padding:0 16px">
-  <h3>Selamat Datang di Perpustakaan Kami!</h3>
-  <p>Temukan berbagai layanan dan informasi terkait dengan koleksi buku, peminjaman, dan kegiatan lainnya di perpustakaan.</p>
-</div>
-
-<!-- Bootstrap Dropdown for other library features -->
-<div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Fitur Perpustakaan
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Panduan Pengguna</a>
-    <a class="dropdown-item" href="#">Kegiatan Literasi</a>
-    <a class="dropdown-item" href="#">Bergabung sebagai Anggota</a>
-  </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
-</html>
-
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -149,58 +8,175 @@ body {
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 20px;
+            margin: 0;
             background-color: #f4f4f4;
             color: #333;
         }
+
         h1 {
             text-align: center;
             color: #2C3E50;
         }
+
         p {
             text-align: justify;
             margin-bottom: 15px;
         }
+
         .section-title {
             font-size: 1.2em;
             font-weight: bold;
             color: #34495E;
             margin-top: 20px;
         }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar img {
+            float: left;
+            height: 40px;
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .subnav {
+            float: left;
+            overflow: hidden;
+        }
+
+        .subnav .subnavbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover, .subnav:hover .subnavbtn {
+            background-color: blue;
+        }
+
+        .subnav-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: blue;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .subnav-content a {
+            float: left;
+            color: white;
+            text-decoration: none;
+        }
+
+        .subnav-content a:hover {
+            background-color: #eee;
+            color: black;
+        }
+
+        .subnav:hover .subnav-content {
+            display: block;
+        }
+
+        /* Bootstrap Dropdown styles */
+        .dropdown-menu a {
+            color: #333;
+            padding: 8px 16px;
+        }
     </style>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="https://library.unpar.ac.id/images/default/logo.png" alt="Library Logo">
+    <a href="#home">Home</a>
+    <div class="subnav">
+        <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+            <a href="#company">Company</a>
+            <a href="#team">Team</a>
+            <a href="#careers">Careers</a>
+        </div>
+    </div>
+    <div class="subnav">
+        <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+            <a href="modul1.html">Bring</a>
+            <a href="#deliver">Deliver</a>
+            <a href="#package">Package</a>
+            <a href="#express">Express</a>
+        </div>
+    </div>
+    <div class="subnav">
+        <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+            <a href="#link1">Link 1</a>
+            <a href="#link2">Link 2</a>
+            <a href="#link3">Link 3</a>
+            <a href="#link4">Link 4</a>
+            <a href="modul5.html">modul 5</a>
+            <a href="modul6.html">modul 6</a>
+            <a href="#link7">Link 7</a>
+            <a href="modul2.html">Link 8</a>
+        </div>
+    </div>
+    <a href="#contact">Contact</a>
+</div>
+
+<!-- Page Content -->
+<div style="padding:0 16px">
     <h1>Sejarah Universitas Katolik Parahyangan</h1>
 
     <p>Universitas Katolik Parahyangan diresmikan berdirinya pada tanggal 17 Januari 1955 dengan hanya ada satu fakultas yaitu Fakultas Ekonomi. Kemudian pada tahun 1958 didirikan Fakultas Hukum. Pada tahun 1960 didirikan Fakultas Teknik dan pada tahun 1961 didirikan Fakultas Ilmu Sosial dan Politik. Selanjutnya pada tahun 1979 Fakultas Filsafat Jl. Nias 2, Bandung bergabung dengan Unpar dan terakhir pada tahun 1992, didirikan dua buah fakultas baru, yaitu Fakultas Matematika / Ilmu Pasti Alam dan Fakultas Teknik Industri.</p>
 
     <p>Sejak tahun 1957, yaitu sejak berdirinya Universitas Katolik Parahyangan, maka pada saat itu pula telah dibentuk Perpustakaan yang sederhana di Gedung Panti Budaya, karena pada waktu itu kegiatan perkuliahan juga diadakan di Gedung Panti Budaya.</p>
 
-    <p>Kemudian pada tahun 1961 bersamaan dengan dipindahkannya kegiatan perkuliahan, maka Perpustakaan pun dipindahkan ke gedung di Jl. Merdeka No. 32. Di gedung tersebut, empat fakultas melaksanakan kegiatan, baik di bidang proses belajar mengajar mau pun dibidang lainnya. Gedung berlantai empat, yang hanya menempati tanah seluas 3000 m2, tentunya tidak mampu menampung seluruh kegiatan dari keempat fakultas tersebut.</p>
+    <p>Kemudian pada tahun 1961 bersamaan dengan dipindahkannya kegiatan perkuliahan, maka Perpustakaan pun dipindahkan ke gedung di Jl. Merdeka No. 32. Di gedung tersebut, empat fakultas melaksanakan kegiatan, baik di bidang proses belajar mengajar mau pun dibidang lainnya. Gedung berlantai empat, yang hanya menempati tanah seluas 3000 m², tentunya tidak mampu menampung seluruh kegiatan dari keempat fakultas tersebut.</p>
+</div>
 
-    <p class="section-title">Pindahnya Perpustakaan dan Fakultas</p>
-    <p>Pada tahun 1964 Universitas Katolik Parahyangan khusus Fakultas Teknik mendapatkan pinjaman lokasi di sebuah pabrik biskuit di Jl. Jenderal Sudirman Bandung, dan buku-buku bidang teknik pun berpindah lokasi ke gedung tersebut.</p>
+<!-- Bootstrap Dropdown for other library features -->
+<div class="dropdown show" style="padding: 20px;">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Fitur Perpustakaan
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Panduan Pengguna</a>
+        <a class="dropdown-item" href="#">Kegiatan Literasi</a>
+        <a class="dropdown-item" href="#">Bergabung sebagai Anggota</a>
+    </div>
+</div>
 
-    <p>Kegiatan perkuliahan Fakultas Teknik Unpar di gedung pabrik biskuit Olimpia berjalan sampai dengan tahun 1974 dan dengan selesai dibangunnya gedung baru, Fakultas Teknik Unpar kemudian pindah menempati gedung baru di lokasi Jl. Ciumbuleuit 94 dan Perpustakaan Fakultas Teknik pun pindah ke Ciumbuleuit 94.</p>
-
-    <p>Perpustakaan Fakultas Ekonomi pada tahun 1968 dipindahkan dari Gedung Jl. Merdeka 32 dan menempati lokasi gedung di Jl. Aceh, dimana dikumpulkan buku-buku untuk Fakultas Ekonomi, Hukum dan Fisip.</p>
-
-    <p>Akhirnya pada tahun 1981 Gedung Fakultas Ilmu Sosial Politik selesai dibangun dan UPT Perpustakaan mendapatkan satu lantai, maka buku-buku untuk Fakultas Hukum dan Fisip dipindahkan dari lokasi Jl. Aceh ke lokasi Jl.Ciumbuleuit 94, menempati sebuah ruangan di gedung 3. Sedangkan buku-buku Ekonomi tetap berada di Gedung Jl. Aceh sampai sekarang.</p>
-
-    <p class="section-title">Perubahan dan Pengembangan</p>
-    <p>Pada tahun 1996, dibangun gedung baru, yang dinamai Gedung 8, yang diperuntukkan bagi Fakultas MIPA dan Fakultas Teknologi Industri. Sejalan dengan itu, UPT Perpustakaan juga mendapat satu ruangan di gedung tersebut untuk menyimpan koleksi Fakultas Teknik, FTIS dan TI.</p>
-
-    <p>Sementara itu, sejak Fakultas Hukum menempati gedung baru, beberapa Tenaga Pengajar Tetap telah merintis pembentukan Perpustakaan Fakultas Hukum yang sepenuhnya dikelola oleh Fakultas Hukum, yang kemudian untuk keperluan itu dan juga untuk keperluan lain dibentuk sebuah Lembaga Pusat Studi Hukum yang membawahi Perpustakaan Fakultas Hukum sejak tahun 1983. Pada tahun 1998, Pusat Studi Hukum dibubarkan, sehingga Perpustakaan Fakultas Hukum diserahkan pengelolaannya kepada UPT Perpustakaan. Lokasinya ada di gedung 2.</p>
-
-    <p>Pada tahun 1979 Fakultas Filsafat di Jl. Nias Bandung (kepunyaan Keuskupan Bandung) bergabung dengan Universitas Katolik Parahyangan, dan Perpustakaan yang ada di Fakultas Filasafat ini, sejak penggabungan pengelolaannya ada di bawah pengelolaan UPT Perpustakaan Unpar.</p>
-
-    <p class="section-title">Perpustakaan Unpar pada Tahun 1999 dan Perubahan Nama</p>
-    <p>Jadi sampai tahun 1999 UPT Perpustakaan Unpar tersebar di lima lokasi, yaitu Jl. Aceh, Jl. Nias, Jl. Ciumbuleuit 94 dengan 3 lokasi. Kemudian mulai Januari tahun 2000, dengan selesainya pembangunan gedung 9 di lokasi Kampus Unpar, Jl. Ciumbuleuit 94, UPT Perpustakaan menempati lantai 2 dan lantai 3 gedung tersebut dengan luas ruangan lebih kurang 1700 meter persegi. Seluruh kegiatan operasional pengadaan dan pengolahan dan sirkulasi dilakukan di Perpustakaan Ciumbuleuit, kecuali untuk sirkulasi perpustakaan Fakultas Filsafat tetap dilakukan di Jl. Nias 2 Bandung.</p>
-
-    <p>Sejak bulan September 2005, UPT Perpustakaan Unpar berubah nama menjadi Pusat Dokumentasi Informasi Ilmiah Unpar atau yang di lingkungan internal Unpar lebih dikenal dengan sebutan PDII.</p>
-
-    <p>Dengan disahkan dan diberlakukannya Struktur Organisasi dan Tata Kelola yang baru, maka mulai tanggal 17 Mei 2013, Pusat Dokumentasi Informasi Ilmiah kembali berganti nama menjadi Perpustakaan sesuai dengan peraturan yang tertuang dalam Undang-undang No.43 tahun 2007 tentang Perpustakaan.</p>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
+
+
 
