@@ -9,29 +9,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <style>
-        /* General styles for navbar */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f4f4f4;
             color: #333;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/free-vector/copy-space-bokeh-spring-lights-background_52683-55649.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-        
+
         .navbar {
             display: flex;
-            justify-content: space-between;  /* Space out logo and menu */
-            align-items: center;  /* Vertically align items */
-            background-color: #333;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.8); /* Slight transparency */
             padding: 10px 20px;
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             z-index: 100;
+            box-sizing: border-box;
         }
 
         .navbar img {
-            height: 40px; /* Adjust the logo size */
+            height: 40px;
         }
 
-        /* Container for menu items */
         .navbar-menu {
             display: flex;
             align-items: center;
@@ -51,7 +58,6 @@
             background-color: #575757;
         }
 
-        /* Subnav dropdown styles */
         .subnav {
             position: relative;
             display: inline-block;
@@ -79,22 +85,22 @@
             background-color: #575757;
         }
 
-        /* Show dropdown content when hovering over the subnav */
         .subnav:hover .subnav-content {
             display: block;
         }
 
-        /* Responsive Design: Collapsible Menu for Small Screens */
+        /* Responsive Navbar: Mobile and Small Screens */
         @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            
+
             .navbar-menu {
                 flex-direction: column;
                 width: 100%;
                 margin-top: 10px;
+                display: none;
             }
 
             .navbar a, .subnavbtn {
@@ -102,7 +108,19 @@
                 text-align: left;
                 padding: 12px 20px;
             }
-            
+
+            .navbar.active .navbar-menu {
+                display: flex;
+            }
+
+            /* Hamburger Menu Icon */
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 30px;
+                color: white;
+            }
+
             .subnav-content {
                 position: static;
                 display: none;
@@ -112,39 +130,29 @@
             .subnav:hover .subnav-content {
                 display: block;
             }
-            /* Set the background image */
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-image: url('https://img.freepik.com/free-vector/copy-space-bokeh-spring-lights-background_52683-55649.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
-}
+        }
 
-/* Content Styling */
-.content {
-    color: white;
-    text-align: center;
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.5); /* semi-transparent background for text readability */
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
+        /* Content Styling */
+        .content {
+            color: white;
+            text-align: center;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-h1 {
-    font-size: 2.5em;
-}
+        h1 {
+            font-size: 2.5em;
+        }
 
-p {
-    font-size: 1.2em;
-}
+        p {
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
