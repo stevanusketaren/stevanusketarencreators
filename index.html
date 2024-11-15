@@ -11,7 +11,14 @@ body {
 
 .navbar {
   overflow: hidden;
-  background-color: #333; 
+  background-color: #333;
+  padding: 10px;
+}
+
+.navbar img {
+  float: left;
+  height: 40px; /* Adjust the height to fit the navbar */
+  margin-right: 20px; /* Add some spacing between the logo and the menu items */
 }
 
 .navbar a {
@@ -40,14 +47,14 @@ body {
 }
 
 .navbar a:hover, .subnav:hover .subnavbtn {
-  background-color: blue; /* Changed from red to blue */
+  background-color: blue;
 }
 
 .subnav-content {
   display: none;
   position: absolute;
   left: 0;
-  background-color: blue; /* Changed from red to blue */
+  background-color: blue;
   width: 100%;
   z-index: 1;
 }
@@ -66,12 +73,14 @@ body {
 .subnav:hover .subnav-content {
   display: block;
 }
-
 </style>
 </head>
 <body>
 
 <div class="navbar">
+  <!-- Add logo image here -->
+  <img src="https://library.unpar.ac.id/images/default/logo.png" alt="Library Logo">
+  
   <a href="#home">Home</a>
   <div class="subnav">
     <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
@@ -80,7 +89,7 @@ body {
       <a href="#team">Team</a>
       <a href="#careers">Careers</a>
     </div>
-  </div> 
+  </div>
   <div class="subnav">
     <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
@@ -106,7 +115,6 @@ body {
   <a href="#contact">Contact</a>
 </div>
 
-
 <div style="padding:0 16px">
   <h3>Selamat Datang di Perpustakaan Kami!</h3>
   <p>Temukan berbagai layanan dan informasi terkait dengan koleksi buku, peminjaman, dan kegiatan lainnya di perpustakaan.</p>
@@ -131,6 +139,7 @@ body {
 
 </body>
 </html>
+
 <html lang="id">
 <head>
     <meta charset="UTF-8">
