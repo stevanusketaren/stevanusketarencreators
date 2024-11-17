@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar Perpustakaan</title>
+    <title>Perpustakaan Program Studi Perpustakaan dan Sains Informasi</title>
     
     <!-- Link to FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,11 +24,12 @@
             background-repeat: no-repeat;
         }
 
+        /* Navbar Styling */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(51, 51, 51, 0.8); /* Slight transparency */
+            background-color: rgba(51, 51, 51, 0.8);
             padding: 10px 20px;
             position: fixed;
             top: 0;
@@ -89,7 +93,7 @@
             display: block;
         }
 
-        /* Responsive Navbar: Mobile and Small Screens */
+        /* Responsive Navbar */
         @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -113,7 +117,6 @@
                 display: flex;
             }
 
-            /* Hamburger Menu Icon */
             .hamburger {
                 display: block;
                 cursor: pointer;
@@ -133,25 +136,20 @@
         }
 
         /* Content Styling */
-        .content {
-            color: white;
+        .container {
+            padding-top: 80px; /* Space for fixed navbar */
+        }
+
+        h2, h3 {
             text-align: center;
-            padding: 50px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
         }
 
-        h1 {
-            font-size: 2.5em;
+        .form-group {
+            margin-bottom: 15px;
         }
 
-        p {
-            font-size: 1.2em;
+        .table {
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -159,15 +157,11 @@
 
 <!-- Navbar -->
 <div class="navbar">
-    <!-- Logo -->
     <img src="https://library.unpar.ac.id/images/default/logo.png" alt="Library Logo">
 
-    <!-- Menu items container -->
     <div class="navbar-menu">
-        <!-- Menu links -->
         <a href="#home">Home</a>
 
-        <!-- About Dropdown -->
         <div class="subnav">
             <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
             <div class="subnav-content">
@@ -177,7 +171,6 @@
             </div>
         </div>
 
-        <!-- Services Dropdown -->
         <div class="subnav">
             <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
             <div class="subnav-content">
@@ -188,7 +181,6 @@
             </div>
         </div>
 
-        <!-- Partners Dropdown -->
         <div class="subnav">
             <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
             <div class="subnav-content">
@@ -203,133 +195,149 @@
             </div>
         </div>
 
-        <!-- Contact Link -->
         <a href="#contact">Contact</a>
     </div>
+
+    <span class="hamburger" onclick="toggleNavbar()">&#9776;</span>
 </div>
-</body>
-</html>
 
+<!-- Content -->
+<div class="container">
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Digital</title>
-    
-    <!-- Menyertakan jQuery dan jQuery UI (untuk Datepicker) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Formulir Anggota Perpustakaan -->
+    <h2>Formulir Anggota Perpustakaan Program Studi Perpustakaan dan Sains Informasi</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" class="form-control" id="nama" name="nama" required>
+        </div>
+        <div class="form-group">
+            <label for="nim">NIM:</label>
+            <input type="text" class="form-control" id="nim" name="nim" required>
+        </div>
+        <div class="form-group">
+            <label for="alamat">Alamat:</label>
+            <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="jenis_kelamin">Jenis Kelamin:</label><br>
+            <input type="radio" id="laki_laki" name="jenis_kelamin" value="Laki-laki" required> Laki-laki
+            <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required> Perempuan
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="no_hp">No HP:</label>
+            <input type="text" class="form-control" id="no_hp" name="no_hp" required>
+        </div>
+        <div class="form-group">
+            <label for="tempat_lahir">Tempat Lahir:</label>
+            <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" required>
+        </div>
+        <div class="form-group">
+            <label for="tanggal_lahir">Tanggal Lahir:</label>
+            <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Kirim</button>
+    </form>
 
-    <!-- CSS untuk Desain Halaman -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 50px auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        #book-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        #book-list li {
-            background-color: #fff;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-        .button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
-        #book-list li:hover {
-            background-color: #f0f0f0;
-        }
-        #add-book-form {
-            display: none;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
+    <hr>
 
-    <div class="container">
-        <h1>Perpustakaan Digital</h1>
-        
-        <!-- Tombol untuk Menampilkan Daftar Buku dan Menambahkan Buku -->
-        <button class="button" id="toggle-list">Tampilkan Daftar Buku</button>
-        <button class="button" id="toggle-form">Tambah Buku</button>
+    <!-- Tabel Bahan Buku -->
+    <h3>Tabel Bahan Buku</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Judul Buku</th>
+                <th>Pengarang</th>
+                <th>ISBN</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Buku A</td>
+                <td>Pengarang A</td>
+                <td>978-1-234567-89-7</td>
+            </tr>
+                        <tr>
+                <td>2</td>
+                <td>Buku B</td>
+                <td>Pengarang B</td>
+                <td>978-1-234567-88-0</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Buku C</td>
+                <td>Pengarang C</td>
+                <td>978-1-234567-87-3</td>
+            </tr>
+        </tbody>
+    </table>
 
-        <!-- Daftar Buku -->
-        <ul id="book-list">
-            <li>Buku 1 - "Belajar JavaScript"</li>
-            <li>Buku 2 - "Pemrograman Web"</li>
-            <li>Buku 3 - "Dasar-Dasar CSS"</li>
-        </ul>
+    <hr>
 
-        <!-- Form untuk Menambahkan Buku Baru -->
-        <div id="add-book-form">
-            <h3>Tambah Buku Baru</h3>
-            <input type="text" id="book-title" placeholder="Judul Buku" />
-            <label for="publish-date">Tanggal Penerbitan:</label>
-            <input type="text" id="publish-date" />
-            <button class="button" id="add-book">Tambah Buku</button>
+    <!-- Form Pemesanan Buku -->
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Form Pemesanan Buku</h3>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="nama_pemesan">Nama Pemesan:</label>
+                    <input type="text" class="form-control" id="nama_pemesan" name="nama_pemesan" required>
+                </div>
+                <div class="form-group">
+                    <label for="email_pemesan">Email Pemesan:</label>
+                    <input type="email" class="form-control" id="email_pemesan" name="email_pemesan" required>
+                </div>
+                <div class="form-group">
+                    <label for="judul_buku">Judul Buku yang Dipesan:</label>
+                    <input type="text" class="form-control" id="judul_buku" name="judul_buku" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Pesan</button>
+            </form>
+        </div>
+
+        <!-- Form Perpanjangan Peminjaman Buku -->
+        <div class="col-md-6">
+            <h3>Form Perpanjangan Peminjaman Buku</h3>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="nama_peminjam">Nama Peminjam:</label>
+                    <input type="text" class="form-control" id="nama_peminjam" name="nama_peminjam" required>
+                </div>
+                <div class="form-group">
+                    <label for="no_anggota">Nomor Anggota:</label>
+                    <input type="text" class="form-control" id="no_anggota" name="no_anggota" required>
+                </div>
+                <div class="form-group">
+                    <label for="isbn_buku">No ISBN Buku:</label>
+                    <input type="text" class="form-control" id="isbn_buku" name="isbn_buku" required>
+                </div>
+                <div class="form-group">
+                    <label for="tanggal_perpanjangan">Tanggal Perpanjangan:</label>
+                    <input type="date" class="form-control" id="tanggal_perpanjangan" name="tanggal_perpanjangan" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Perpanjang</button>
+            </form>
         </div>
     </div>
+</div>
 
-    <script>
-        // Menunggu hingga DOM siap
-        $(document).ready(function() {
-            // Mengaktifkan Datepicker pada input tanggal
-            $('#publish-date').datepicker();
+<!-- Add jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-            // Menampilkan atau Menyembunyikan Daftar Buku dengan Efek Toggle
-            $('#toggle-list').click(function() {
-                $('#book-list').toggle('slow');
-            });
-
-            // Menampilkan atau Menyembunyikan Form Tambah Buku dengan Efek Fade
-            $('#toggle-form').click(function() {
-                $('#add-book-form').fadeToggle('slow');
-            });
-
-            // Menambahkan Buku Baru ke Daftar Buku
-            $('#add-book').click(function() {
-                var bookTitle = $('#book-title').val();
-                var publishDate = $('#publish-date').val();
-
-                if (bookTitle && publishDate) {
-                    // Menambahkan buku baru ke dalam daftar
-                    $('#book-list').append('<li>' + bookTitle + ' - ' + publishDate + '</li>');
-                    // Mengosongkan form input setelah menambahkan buku
-                    $('#book-title').val('');
-                    $('#publish-date').val('');
-                } else {
-                    alert('Judul buku dan tanggal penerbitan tidak boleh kosong!');
-                }
-            });
-        });
-    </script>
+<script>
+    // Function to toggle the navbar on small screens (hamburger menu)
+    function toggleNavbar() {
+        var navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('active');
+    }
+</script>
 
 </body>
 </html>
