@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kalkulator Sederhana</title>
+    <title>Login</title>
 </head>
 <body>
-    <form action="hasil_hitung.php" method="post">
-        Bilangan 1: <input type="number" name="bil1" required><br>
-        Bilangan 2: <input type="number" name="bil2" required><br>
-        Operasi: 
-        <select name="operator">
-            <option value="tambah">Tambah</option>
-            <option value="kurang">Kurang</option>
-            <option value="kali">Kali</option>
-            <option value="bagi">Bagi</option>
-        </select><br>
-        <button type="submit">Hitung</button>
+    <h1>Login</h1>
+    <form method="post" action="proses_login.php">
+        Username: <input type="text" name="username"><br>
+        Password: <input type="password" name="password"><br>
+        <button type="submit">Login</button>
     </form>
 </body>
 </html>
