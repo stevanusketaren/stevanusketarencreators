@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Perpustakaan</title>
+    
+    <!-- Link to FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #110000;
+            color: #333;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/free-vector/copy-space-bokeh-spring-lights-background_52683-55649.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-sizing: border-box;
+        }
+
+        .navbar img {
+            height: 40px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a, .subnavbtn {
+            color: #f0f0f0;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover, .subnavbtn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .subnav {
+            position: relative;
+            display: inline-block;
+        }
+
+        .subnav-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(51, 51, 51, 0.9);
+            min-width: 160px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .subnav-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .subnav-content a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .subnav:hover .subnav-content {
+            display: block;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+                display: none;
+            }
+
+            .navbar a, .subnavbtn {
+                width: 100%;
+                text-align: left;
+                padding: 12px 20px;
+            }
+
+            .navbar.active .navbar-menu {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 30px;
+                color: white;
+            }
+
+            .subnav-content {
+                position: static;
+                display: none;
+                width: 100%;
+            }
+
+            .subnav:hover .subnav-content {
+                display: block;
+            }
+        }
+
+        .content {
+            color: white;
+            text-align: center;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .nav-item.home {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .subnavbtn.about {
+            background-color: #2196F3; /* Blue */
+        }
+
+        .subnav-item.company {
+            background-color: #FF9800; /* Orange */
+        }
+
+        .subnav-item.team {
+            background-color: #9C27B0; /* Purple */
+        }
+
+        .subnav-item.careers {
+            background-color: #F44336; /* Red */
+        }
+
+        .navbar a, .subnavbtn {
+            color: #f0f0f0;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover, .subnavbtn:hover, .subnav-content a:hover {
+            opacity: 0.8; /* Slightly change opacity on hover */
+        }
+
+        .subnavbtn.services {
+            background-color: #28a745; /* Green */
+            color: white;
+        }
+
+        .subnavbtn.partners {
+            background-color: #007bff; /* Blue */
+            color: white;
+        }
+
+        .subnav-content .subnav-item {
+            background-color: #343a40; /* Dark Gray */
+            color: #f0f0f0;
+        }
+
+        .subnav-content .subnav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="https://library.unpar.ac.id/images/default/logo.png" alt="Library Logo">
+    <div class="navbar-menu">
+        <a class="nav-item home" href="index.html">Home</a>
+        <div class="subnav">
+            <button class="subnavbtn about">About <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item company" href="#company">Company</a>
+                <a class="subnav-item team" href="#team">Team</a>
+                <a class="subnav-item careers" href="#careers">Careers</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn services">Services <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item bring" href="tabel-login.html">Bring</a>
+                <a class="subnav-item deliver" href="buku perpustakaan.html">Deliver</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn partners">Partners <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item modul1" href="modul1.html">modul 1</a>
+                <a class="subnav-item modul2" href="modul2.html">modul 2</a>
+                <a class="subnav-item modul3" href="modul3.html">modul 3</a>
+                <a class="subnav-item modul4" href="modulA.html">modul 4</a>
+                <a class="subnav-item modul5" href="modul5.html">modul 5</a>
+                <a class="subnav-item modul6" href="modul6.html">modul 6</a>
+                <a class="subnav-item modul7" href="modul7.html">modul 7</a>
+                <a class="subnav-item modul8" href="modul8.html">modul 8</a>
+            </div>
+        </div>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Digital</title>
+    
+    <!-- Menyertakan jQuery dan jQuery UI untuk Datepicker -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- CSS untuk Desain Halaman -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #book-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #book-list li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        #book-list li:hover {
+            background-color: #f0f0f0;
+        }
+        #add-book-form {
+            display: none;
+            margin-top: 20px;
+        }
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Perpustakaan Digital</h1>
+        
+        <!-- Tombol untuk Menampilkan Daftar Buku dan Menambahkan Buku -->
+        <button class="button" id="toggle-list">Tampilkan Daftar Buku</button>
+        <button class="button" id="toggle-form">Tambah Buku</button>
+
+        <!-- Daftar Buku -->
+        <ul id="book-list">
+            <li>Buku 1 - "Belajar JavaScript"</li>
+            <li>Buku 2 - "Pemrograman Web"</li>
+            <li>Buku 3 - "Dasar-Dasar CSS"</li>
+        </ul>
+
+        <!-- Form untuk Menambahkan Buku Baru -->
+        <div id="add-book-form">
+            <h3>Tambah Buku Baru</h3>
+            <label for="book-title">Judul Buku:</label>
+            <input type="text" id="book-title" placeholder="Masukkan Judul Buku" />
+            <label for="publish-date">Tanggal Penerbitan:</label>
+            <input type="text" id="publish-date" placeholder="Pilih Tanggal Penerbitan" />
+            <button class="button" id="add-book">Tambah Buku</button>
+        </div>
+    </div>
+
+    <script>
+        // Menunggu hingga DOM siap
+        $(document).ready(function() {
+            // Mengaktifkan Datepicker pada input tanggal
+            $('#publish-date').datepicker();
+
+            // Menampilkan atau Menyembunyikan Daftar Buku dengan Efek Toggle
+            $('#toggle-list').click(function() {
+                $('#book-list').toggle('slow');
+            });
+
+            // Menampilkan atau Menyembunyikan Form Tambah Buku dengan Efek Fade
+            $('#toggle-form').click(function() {
+                $('#add-book-form').fadeToggle('slow');
+            });
+
+            // Menambahkan Buku Baru ke Daftar Buku
+            $('#add-book').click(function() {
+                var bookTitle = $('#book-title').val();
+                var publishDate = $('#publish-date').val();
+
+                if (bookTitle && publishDate) {
+                    // Menambahkan buku baru ke dalam daftar
+                    $('#book-list').append('<li>' + bookTitle + ' - ' + publishDate + '</li>');
+                    // Mengosongkan form input setelah menambahkan buku
+                    $('#book-title').val('');
+                    $('#publish-date').val('');
+                } else {
+                    alert('Judul buku dan tanggal penerbitan tidak boleh kosong!');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

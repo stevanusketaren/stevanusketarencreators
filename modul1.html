@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Perpustakaan</title>
+    
+    <!-- Link to FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/free-vector/copy-space-bokeh-spring-lights-background_52683-55649.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-sizing: border-box;
+        }
+
+        .navbar img {
+            height: 40px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a, .subnavbtn {
+            color: #f0f0f0;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover, .subnavbtn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .subnav {
+            position: relative;
+            display: inline-block;
+        }
+
+        .subnav-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(51, 51, 51, 0.9);
+            min-width: 160px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .subnav-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .subnav-content a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .subnav:hover .subnav-content {
+            display: block;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+                display: none;
+            }
+
+            .navbar a, .subnavbtn {
+                width: 100%;
+                text-align: left;
+                padding: 12px 20px;
+            }
+
+            .navbar.active .navbar-menu {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 30px;
+                color: white;
+            }
+
+            .subnav-content {
+                position: static;
+                display: none;
+                width: 100%;
+            }
+
+            .subnav:hover .subnav-content {
+                display: block;
+            }
+        }
+
+        .content {
+            padding: 70px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        h2, h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .nav-item.home {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .subnavbtn.about {
+            background-color: #2196F3; /* Blue */
+        }
+
+        .subnav-item.company {
+            background-color: #FF9800; /* Orange */
+        }
+
+        .subnav-item.team {
+            background-color: #9C27B0; /* Purple */
+        }
+
+        .subnav-item.careers {
+            background-color: #F44336; /* Red */
+        }
+
+        .navbar a, .subnavbtn {
+            color: #f0f0f0;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover, .subnavbtn:hover, .subnav-content a:hover {
+            opacity: 0.8; /* Slightly change opacity on hover */
+        }
+
+        .subnavbtn.services {
+            background-color: #28a745; /* Green */
+            color: white;
+        }
+
+        .subnavbtn.partners {
+            background-color: #007bff; /* Blue */
+            color: white;
+        }
+
+        .subnav-content .subnav-item {
+            background-color: #343a40; /* Dark Gray */
+            color: #f0f0f0;
+        }
+
+        .subnav-content .subnav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
+        }
+
+        .container {
+            max-width: 800px; /* Set a maximum width for the container */
+            margin: 20px auto; /* Center the container */
+            padding: 20px; /* Add padding inside the container */
+            background: rgba(255, 255, 255, 0.9); /* Background color with transparency */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        h1 {
+            text-align: center; /* Center the main heading */
+            color: #333; /* Heading color */
+        }
+
+        h3 {
+            margin-top: 20px; /* Space above the subheadings */
+            color: #333; /* Subheading color */
+        }
+
+        .center-text {
+            text-align: center; /* Center align text and images */
+        }
+
+        audio {
+            width: 100%; /* Make audio player full width */
+            margin-top: 10px; /* Space above the audio player */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="https://library.unpar.ac.id/images/default/logo.png" alt="Library Logo">
+    <div class="navbar-menu">
+        <a class="nav-item home" href="index.html">Home</a>
+        <div class="subnav">
+            <button class="subnavbtn about">About <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item company" href="#company">Company</a>
+                <a class="subnav-item team" href="#team">Team</a>
+                <a class="subnav-item careers" href="#careers">Careers</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn services">Services <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item bring" href="tabel-login.html">Bring</a>
+                <a class="subnav-item deliver" href="buku perpustakaan.html">Deliver</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn partners">Partners <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item modul1" href="modul1.html">modul 1</a>
+                <a class="subnav-item modul2" href="modul2.html">modul 2</a>
+                <a class="subnav-item modul3" href="modul3.html">modul 3</a>
+                <a class="subnav-item modul4" href="modulA.html">modul 4</a>
+                <a class="subnav-item modul5" href="modul5.html">modul 5</a>
+                <a class="subnav-item modul6" href="modul6.html">modul 6</a>
+                <a class="subnav-item modul7" href="modul7.html">modul 7</a>
+                <a class="subnav-item modul8" href="modul8.html">modul 8</a>
+            </div>
+        </div>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+</body>
+<main>
+
+
+        <div class="container" style="margin-top: 100px;">
+            <h1>Perpustakaan Stevanus Ketaren</h1>
+            
+            <p style="font-size: 23px; line-height: 1.5;">
+                Perkenalkan, nama saya Stevanus Ketaren dengan NIM 222201023. Ini adalah perpustakaan <i>homepage</i>.
+            </p>
+    
+            <h3 class="center-text">Berikut ini adalah gambar dari gedung Perpustakaan UNPAR.</h3>
+            <div class="center-text">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-hBxWYmhaxEVfIPeFCIcQ1zo6xXmUV5HuAg&s.jpg" alt="Gedung Perpustakaan UNPAR" style="max-width: 100%; height: auto; border-radius: 10px;"/>
+            </div>
+            <p class="center-text"><i>Perpustakaan UNPAR</i></p>
+    
+            <h3 class="center-text">Video Profil Perpustakaan UNPAR</h3>
+            <div class="center-text">
+                <iframe src="https://www.youtube.com/embed/8PXxcX_g8SY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width: 100%; height: 400px; border-radius: 10px;"></iframe>
+            </div>
+    
+            <h6 class="center-text">Berikut adalah contoh audio</h6>
+    
+            <p class="center-text">
+                <audio controls style="width: 100%; margin-top: 10px;">
+                    <source src="Eminem - Mockingbird [Official Music Video].mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </p>
+        </div>
+</main>
+</html>

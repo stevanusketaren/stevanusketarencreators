@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Perpustakaan</title>
+    
+    <!-- Link to FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #110000;
+            color: #333;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/free-vector/copy-space-bokeh-spring-lights-background_52683-55649.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-sizing: border-box;
+        }
+
+        .navbar img {
+            height: 40px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a, .subnavbtn {
+            color: #f0f0f0;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover, .subnavbtn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .subnav {
+            position: relative;
+            display: inline-block;
+        }
+
+        .subnav-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(51, 51, 51, 0.9);
+            min-width: 160px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .subnav-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .subnav-content a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .subnav:hover .subnav-content {
+            display: block;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+                display: none;
+            }
+
+            .navbar a, .subnavbtn {
+                width: 100%;
+                text-align: left;
+                padding: 12px 20px;
+            }
+
+            .navbar.active .navbar-menu {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 30px;
+                color: white;
+            }
+
+            .subnav-content {
+                position: static;
+                display: none;
+                width: 100%;
+            }
+
+            .subnav:hover .subnav-content {
+                display: block;
+            }
+        }
+
+        .content {
+            color: white;
+            text-align: center;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .nav-item.home {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .subnavbtn.about {
+            background-color: #2196F3; /* Blue */
+        }
+
+        .subnav-item.company {
+            background-color: #FF9800; /* Orange */
+        }
+
+        .subnav-item.team {
+            background-color: #9C27B0; /* Purple */
+        }
+
+        .subnav-item.careers {
+            background-color: #F44336; /* Red */
+        }
+
+        .navbar a, .subnavbtn {
+            color: #f0f0f0;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover, .subnavbtn:hover, .subnav-content a:hover {
+            opacity: 0.8; /* Slightly change opacity on hover */
+        }
+
+        .subnavbtn.services {
+            background-color: #28a745; /* Green */
+            color: white;
+        }
+
+        .subnavbtn.partners {
+            background-color: #007bff; /* Blue */
+            color: white;
+        }
+
+        .subnav-content .subnav-item {
+            background-color: #343a40; /* Dark Gray */
+            color: #f0f0f0;
+        }
+
+        .subnav-content .subnav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="https://library.unpar.ac.id/images/default/logo.png" alt="Library Logo">
+    <div class="navbar-menu">
+        <a class="nav-item home" href="index.html">Home</a>
+        <div class="subnav">
+            <button class="subnavbtn about">About <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item company" href="#company">Company</a>
+                <a class="subnav-item team" href="#team">Team</a>
+                <a class="subnav-item careers" href="#careers">Careers</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn services">Services <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item bring" href="tabel-login.html">Bring</a>
+                <a class="subnav-item deliver" href="buku perpustakaan.html">Deliver</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn partners">Partners <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item modul1" href="modul1.html">modul 1</a>
+                <a class="subnav-item modul2" href="modul2.html">modul 2</a>
+                <a class="subnav-item modul3" href="modul3.html">modul 3</a>
+                <a class="subnav-item modul4" href="modulA.html">modul 4</a>
+                <a class="subnav-item modul5" href="modul5.html">modul 5</a>
+                <a class="subnav-item modul6" href="modul6.html">modul 6</a>
+                <a class="subnav-item modul7" href="modul7.html">modul 7</a>
+                <a class="subnav-item modul8" href="modul8.html">modul 8</a>
+            </div>
+        </div>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div style="padding:0 16px">
+    <h1>.</h1>
+    <h1>Sejarah Universitas Katolik Parahyangan</h1>
+    <p>Universitas Katolik Parahyangan diresmikan berdirinya pada tanggal 17 Januari 1955 dengan hanya ada satu fakultas yaitu Fakultas Ekonomi. Kemudian pada tahun 1958 didirikan Fakultas Hukum. Pada tahun 1960 didirikan Fakultas Teknik dan pada tahun 1961 didirikan Fakultas Ilmu Sosial dan Politik. Selanjutnya pada tahun 1979 Fakultas Filsafat Jl. Nias 2, Bandung bergabung dengan Unpar dan terakhir pada tahun 1992, didirikan dua buah fakultas baru, yaitu Fakultas Matematika / Ilmu Pasti Alam dan Fakultas Teknik Industri.</p>
+    <p>Sejak tahun 1957, yaitu sejak berdirinya Universitas Katolik Parahyangan, maka pada saat itu pula telah dibentuk Perpustakaan yang sederhana di Gedung Panti Budaya, karena pada waktu itu kegiatan perkuliahan juga diadakan di Gedung Panti Budaya.</p>
+    <p>Kemudian pada tahun 1961 bersamaan dengan dipindahkannya kegiatan perkuliahan, maka Perpustakaan pun dipindahkan ke gedung di Jl. Merdeka No. 32. Di gedung tersebut, empat fakultas melaksanakan kegiatan, baik di bidang proses belajar mengajar mau pun dibidang lainnya. Gedung berlantai empat, yang hanya menempati tanah seluas 3000 m², tentunya tidak mampu menampung seluruh kegiatan dari keempat fakultas tersebut.</p>
+</div>
+
+<!-- Bootstrap Dropdown for other library features -->
+<div class="dropdown show" style="padding: 20px;">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Fitur Perpustakaan
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Panduan Pengguna</a>
+        <a class="dropdown-item" href="#">Kegiatan Literasi</a>
+        <a class="dropdown-item" href="#">Bergabung sebagai Anggota</a>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
+

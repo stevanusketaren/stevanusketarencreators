@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Perpustakaan</title>
+    
+    <!-- Link to FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #110000;
+            color: #333;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/free-vector/copy-space-bokeh-spring-lights-background_52683-55649.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-sizing: border-box;
+        }
+
+        .navbar img {
+            height: 40px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a, .subnavbtn {
+            color: #f0f0f0;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover, .subnavbtn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .subnav {
+            position: relative;
+            display: inline-block;
+        }
+
+        .subnav-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(51, 51, 51, 0.9);
+            min-width: 160px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .subnav-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .subnav-content a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .subnav:hover .subnav-content {
+            display: block;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+                display: none;
+            }
+
+            .navbar a, .subnavbtn {
+                width: 100%;
+                text-align: left;
+                padding: 12px 20px;
+            }
+
+            .navbar.active .navbar-menu {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 30px;
+                color: white;
+            }
+
+            .subnav-content {
+                position: static;
+                display: none;
+                width: 100%;
+            }
+
+            .subnav:hover .subnav-content {
+                display: block;
+            }
+        }
+
+        .content {
+            color: white;
+            text-align: center;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .nav-item.home {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .subnavbtn.about {
+            background-color: #2196F3; /* Blue */
+        }
+
+        .subnav-item.company {
+            background-color: #FF9800; /* Orange */
+        }
+
+        .subnav-item.team {
+            background-color: #9C27B0; /* Purple */
+        }
+
+        .subnav-item.careers {
+            background-color: #F44336; /* Red */
+        }
+
+        .navbar a, .subnavbtn {
+            color: #f0f0f0;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover, .subnavbtn:hover, .subnav-content a:hover {
+            opacity: 0.8; /* Slightly change opacity on hover */
+        }
+
+        .subnavbtn.services {
+            background-color: #28a745; /* Green */
+            color: white;
+        }
+
+        .subnavbtn.partners {
+            background-color: #007bff; /* Blue */
+            color: white;
+        }
+
+        .subnav-content .subnav-item {
+            background-color: #343a40; /* Dark Gray */
+            color: #f0f0f0;
+        }
+
+        .subnav-content .subnav-item:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
+        }
+
+        /* Updated styles for the gallery and book items */
+        .gallery {
+            display: grid; /* Use grid layout */
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusted min width for smaller items */
+            gap: 10px; /* Reduced space between items */
+            margin-top: 30px;
+            padding: 20px; /* Add padding around the gallery */
+            background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+            border-radius: 10px; /* Rounded corners for the gallery */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .book-item {
+            position: relative; /* Position relative for pop-up */
+            padding: 5px; /* Reduced padding for a more minimal look */
+            background-color: #f8f8f8; /* Lighter background color for book items */
+            border-radius: 8px; /* Rounded corners */
+            text-align: center; /* Center text */
+            transition: transform 0.2s, box-shadow 0.2s; /* Smooth scaling and shadow effect */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            max-width: 150px; /* Set a maximum width for book items */
+            margin: auto; /* Center the book items */
+        }
+
+        .book-item img {
+            max-width: 100%; /* Ensure images are responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px; /* Rounded corners for images */
+        }
+
+        .book-item:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+        }
+
+        .description {
+            display: none; /* Keep it hidden by default */
+            position: absolute; /* Position it absolutely within the book item */
+            bottom: -50px; /* Adjust this value to position it below the book item */
+            left: 50%; /* Center it horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px; /* Set a fixed width */
+            text-align: center;
+            margin-top: 5px;
+            z-index: 10; /* Ensure it appears above other elements */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .book-list {
+            margin: 20px; /* Add margin around the book list */
+            padding: 20px; /* Add padding inside the book list */
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .book-item {
+            margin: 10px 0; /* Space between book items */
+            padding: 10px; /* Padding inside each book item */
+            background-color: #f0f0f0; /* Light background for book items */
+            border-radius: 5px; /* Rounded corners for book items */
+            transition: background-color 0.3s; /* Smooth background color change */
+        }
+
+        .book-item:hover {
+            background-color: #e0e0e0; /* Change background on hover */
+        }
+
+        .borrow-section {
+            margin: 20px; /* Add margin around the borrowing section */
+            padding: 20px; /* Add padding inside the borrowing section */
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .alert {
+            color: red; /* Red color for alert messages */
+        }
+
+        .info {
+            color: green; /* Green color for info messages */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <img src="https://library.unpar.ac.id/images/default/logo.png" alt="Library Logo">
+    <div class="navbar-menu">
+        <a class="nav-item home" href="index.html">Home</a>
+        <div class="subnav">
+            <button class="subnavbtn about">About <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item company" href="#company">Company</a>
+                <a class="subnav-item team" href="#team">Team</a>
+                <a class="subnav-item careers" href="#careers">Careers</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn services">Services <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item bring" href="tabel-login.html">Bring</a>
+                <a class="subnav-item deliver" href="buku perpustakaan.html">Deliver</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn partners">Partners <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a class="subnav-item modul1" href="modul1.html">modul 1</a>
+                <a class="subnav-item modul2" href="modul2.html">modul 2</a>
+                <a class="subnav-item modul3" href="modul3.html">modul 3</a>
+                <a class="subnav-item modul4" href="modulA.html">modul 4</a>
+                <a class="subnav-item modul5" href="modul5.html">modul 5</a>
+                <a class="subnav-item modul6" href="modul6.html">modul 6</a>
+                <a class="subnav-item modul7" href="modul7.html">modul 7</a>
+                <a class="subnav-item modul8" href="modul8.html">modul 8</a>
+            </div>
+        </div>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- Modal for Book Description -->
+<div id="bookModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalDescription"></div>
+    </div>
+</div>
+
+<script>
+    // 1. Daftar Buku
+    let books = [
+        { title: "Pemrograman Web", author: "John Doe", available: true },
+        { title: "Algoritma Dasar", author: "Jane Smith", available: true },
+        { title: "Pemrograman Python", author: "Mark Lee", available: false },
+        { title: "Database Modern", author: "Sara Ali", available: true },
+        { title: "Sistem Operasi", author: "David Kim", available: false }
+    ];
+
+    // 2. Menampilkan Daftar Buku
+    function displayBooks() {
+        const bookListDiv = document.getElementById("book-list");
+        bookListDiv.innerHTML = "<h2>Daftar Buku:</h2>";
+        for (let i = 0; i < books.length; i++) {
+            let book = books[i];
+            let bookItem = document.createElement("div");
+            bookItem.classList.add("book-item");
+
+            bookItem.innerHTML = `<strong>${book.title}</strong> oleh ${book.author} - ${book.available ? 'Tersedia' : 'Tidak Tersedia'}`;
+            bookListDiv.appendChild(bookItem);
+        }
+    }
+
+        // 3. Fungsi untuk Meminjam Buku
+        function borrowBooks() {
+            const bookCount = parseInt(document.getElementById("bookCount").value);
+            const messageDiv = document.getElementById("message");
+
+            if (isNaN(bookCount) || bookCount < 1) {
+                messageDiv.textContent = "Harap masukkan jumlah buku yang valid!";
+                return;
+            }
+
+        if (bookCount > books.filter(book => book.available).length) {
+            messageDiv.textContent = `Hanya ada ${books.filter(book => book.available).length} buku yang tersedia.`;
+            return;
+        }
+
+            let booksToBorrow = [];
+            for (let i = 0; i < books.length; i++) {
+                if (books[i].available && booksToBorrow.length < bookCount) {
+                    booksToBorrow.push(books[i].title);
+                    books[i].available = false;
+                }
+            }
+
+        if (booksToBorrow.length > 0) {
+            messageDiv.classList.remove("alert");
+            messageDiv.classList.add("info");
+            messageDiv.textContent = `Anda berhasil meminjam buku: ${booksToBorrow.join(", ")}.`;
+        } else {
+            messageDiv.classList.remove("info");
+            messageDiv.classList.add("alert");
+            messageDiv.textContent = "Tidak ada buku yang tersedia untuk dipinjam.";
+        }
+
+            displayBooks();
+        }
+
+    window.onload = displayBooks;
+
+    // Function to show the modal with the book description
+    function showDescription(id) {
+        var description = document.getElementById(id).innerHTML;
+        document.getElementById("modalDescription").innerHTML = description;
+        document.getElementById("bookModal").style.display = "block";
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById("bookModal").style.display = "none";
+    }
+</script>
+
+<!-- Perpustakaan Online -->
+<div id="book-list" class="book-list" style="margin-top: 100px;">
+    <h2>Daftar Buku - Perpustakaan Online:</h2>
+    <!-- Daftar buku akan ditampilkan di sini -->
+</div>
+
+<div class="borrow-section" style="margin-top: 20px;">
+    <label for="bookCount">Masukkan jumlah buku yang ingin dipinjam:</label>
+    <input type="number" id="bookCount" min="1" max="10" aria-label="Jumlah buku yang ingin dipinjam">
+    <button onclick="borrowBooks()" aria-label="Pinjam Buku">Pinjam Buku</button>
+</div>
+
+<div id="message" class="alert"></div>
+
+<!-- Pameran Buku -->
+<div class="gallery">
+    <h2>Pameran Buku:</h2>
+
+        <!-- Book Item 1 -->
+        <div class="book-item">
+            <div id="deskripsiBuku1" class="description">
+                <p><strong>Diskusi publik perempuan dan teknologi:</strong> Buku ini membahas peran perempuan dalam dunia teknologi dan pentingnya partisipasi mereka dalam berbagai aspek digital.</p>
+            </div>
+            <img src="https://online.fliphtml5.com/rmpye/liiq/files/shot.jpg" alt="Diskusi publik perempuan dan teknologi" aria-label="Diskusi publik perempuan dan teknologi" onclick="showDescription('deskripsiBuku1')">
+        </div>
+
+        <!-- Book Item 2 -->
+        <div class="book-item">
+            <div id="deskripsiBuku2" class="description">
+                <p><strong>Pelatihan keamanan digital:</strong> Buku ini memberikan panduan praktis tentang cara melindungi diri di dunia maya, serta pentingnya keamanan digital di era modern.</p>
+            </div>
+            <img src="https://online.fliphtml5.com/rmpye/azxz/files/shot.jpg" alt="Pelatihan keamanan digital" onclick="showDescription('deskripsiBuku2')">
+        </div>
+
+        <!-- Book Item 3 -->
+        <div class="book-item">
+            <div id="deskripsiBuku3" class="description">
+                <p><strong>Peran dan hak perempuan di ruang digital:</strong> Buku ini mengeksplorasi hak-hak perempuan dalam dunia digital dan bagaimana teknologi bisa menjadi alat pemberdayaan.</p>
+            </div>
+            <img src="https://online.fliphtml5.com/rmpye/vzps/files/shot.jpg" alt="Peran dan hak perempuan di ruang digital" onclick="showDescription('deskripsiBuku3')">
+        </div>
+
+        <!-- Book Item 4 -->
+        <div class="book-item">
+            <div id="deskripsiBuku4" class="description">
+                <p><strong>Pemikiran utama seri diskusi kecerdasan buatan:</strong> Buku ini mengulas berbagai topik penting dalam kecerdasan buatan, serta dampaknya terhadap masyarakat dan industri.</p>
+            </div>
+            <img src="https://online.fliphtml5.com/rmpye/drwl/files/shot.jpg" alt="Pemikiran utama seri diskusi kecerdasan buatan" onclick="showDescription('deskripsiBuku4')">
+        </div>
+
+        <!-- Book Item 5 -->
+        <div class="book-item">
+            <div id="deskripsiBuku5" class="description">
+                <p><strong>Dari anak muda untuk Indonesia makin cakep digital:</strong> Buku ini menginspirasi generasi muda untuk memanfaatkan teknologi demi kemajuan bangsa dan masyarakat.</p>
+            </div>
+            <img src="https://online.fliphtml5.com/rmpye/aoek/files/shot.jpg" alt="Dari anak muda untuk Indonesia makin cakep digital" onclick="showDescription('deskripsiBuku5')">
+        </div>
+
+        <!-- Book Item 6 -->
+        <div class="book-item">
+            <div id="deskripsiBuku6" class="description">
+                <p><strong>KBGO dan pelecehan seksual daring di tempat kerja:</strong> Buku ini mengulas topik penting mengenai pelecehan seksual secara daring dan cara-cara untuk menghadapinya di tempat kerja.</p>
+            </div>
+            <img src="https://online.fliphtml5.com/rmpye/jejk/files/shot.jpg" alt="KBGO dan pelecehan seksual daring di tempat kerja" onclick="showDescription('deskripsiBuku6')">
+        </div>
+
+        <!-- Book Item 7 -->
+        <div class="book-item">
+            <div id="deskripsiBuku7" class="description">
+                <p><strong>Indonesian Civil Society Position Paper Three Main Challenges of Indonesia's Digital Transformation:</strong> Buku ini memberikan analisis mendalam tentang tantangan yang dihadapi Indonesia dalam transformasi digital.</p>
+            </div>
+            <img src="https://online.fliphtml5.com/rmpye/oivl/files/shot.jpg" alt="Indonesian Civil Society Position Paper Three Main Challenges of Indonesia's Digital Transformation" onclick="showDescription('deskripsiBuku7')">
+        </div>
+
+    <!-- Book Item 8 -->
+    <div class="book-item">
+        <div id="deskripsiBuku8" class="description">
+            <p><strong>Kertas posisi masyarakat sipil tiga tantangan utama transformasi digital Indonesia:</strong> Buku ini menyoroti perspektif masyarakat sipil terhadap tantangan digitalisasi yang dihadapi oleh Indonesia.</p>
+        </div>
+        <img src="https://online.fliphtml5.com/rmpye/mmqv/files/shot.jpg" alt="Kertas posisi masyarakat sipil tiga tantangan utama transformasi digital Indonesia" onclick="showDescription('deskripsiBuku8')">
+    </div>
+
+    <!-- Book Item 9 -->
+    <div class="book-item">
+        <div id="deskripsiBuku9" class="description">
+            <p><strong>The Unspoken Facts: Significant Challenges of Indonesian Women in Digital Issues:</strong> Buku ini mengungkap tantangan-tantangan besar yang dihadapi perempuan Indonesia di dunia digital.</p>
+        </div>
+        <img src="https://online.fliphtml5.com/rmpye/mxzw/files/shot.jpg" alt="The Unspoken Facts: Significant Challenges of Indonesian Women in Digital Issues" onclick="showDescription('deskripsiBuku9')">
+    </div>
+
+    <!-- Book Item 10 -->
+    <div class="book-item">
+        <div id="deskripsiBuku10" class="description">
+            <p><strong>Fakta yang Tak Terucapkan: Tantangan Signifikan Perempuan Indonesia dalam Isu Digital:</strong> Buku ini menggali lebih dalam tantangan yang belum banyak dibicarakan mengenai perempuan di dunia digital Indonesia.</p>
+        </div>
+        <img src="https://online.fliphtml5.com/rmpye/dehh/files/shot.jpg" alt="Fakta yang Tak Terucapkan: Tantangan Signifikan Perempuan Indonesia dalam Isu Digital" onclick="showDescription('deskripsiBuku10')">
+    </div>
+
+    <!-- Book Item 11 -->
+    <div class="book-item">
+        <div id="deskripsiBuku11" class="description">
+            <p><strong>Digital aman-aman bergerak:</strong> Buku ini memberikan tips dan cara-cara untuk bergerak di dunia digital dengan aman dan penuh kehati-hatian.</p>
+        </div>
+        <img src="https://online.fliphtml5.com/rmpye/volu/files/shot.jpg" alt="Digital aman-aman bergerak" onclick="showDescription('deskripsiBuku11')">
+    </div>
+
+    <!-- Book Item 12 -->
+    <div class="book-item">
+        <div id="deskripsiBuku12" class="description">
+            <p><strong>Kreasi asyik edukasi digital untuk anak:</strong> Buku ini membahas cara-cara kreatif untuk memberikan edukasi digital kepada anak-anak dengan cara yang menyenangkan dan aman.</p>
+        </div>
+        <img src="https://online.fliphtml5.com/rmpye/pxdc/files/shot.jpg" alt="Kreasi asyik edukasi digital untuk anak" onclick="showDescription('deskripsiBuku12')">
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
